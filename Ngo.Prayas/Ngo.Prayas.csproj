@@ -1,0 +1,418 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A0D43A2B-6E40-4358-B182-FE258EC8152B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ngo.Prayas</RootNamespace>
+    <AssemblyName>Ngo.Prayas</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Unity.Abstractions, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.1\lib\net47\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.1\lib\net47\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mvc5, Version=1.4.0.0, Culture=neutral, PublicKeyToken=43da31bc42a85347, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Mvc5.1.4.0\lib\net45\Unity.Mvc5.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="StaticFiles\css\animate.css" />
+    <Content Include="StaticFiles\css\assets\aleft.png" />
+    <Content Include="StaticFiles\css\assets\aright.png" />
+    <Content Include="StaticFiles\css\assets\arrowleft.png" />
+    <Content Include="StaticFiles\css\assets\arrowright.png" />
+    <Content Include="StaticFiles\css\assets\arrow_large_left.png" />
+    <Content Include="StaticFiles\css\assets\arrow_large_right.png" />
+    <Content Include="StaticFiles\css\assets\arrow_left.png" />
+    <Content Include="StaticFiles\css\assets\arrow_left2.png" />
+    <Content Include="StaticFiles\css\assets\arrow_right.png" />
+    <Content Include="StaticFiles\css\assets\arrow_right2.png" />
+    <Content Include="StaticFiles\css\assets\black50.png" />
+    <Content Include="StaticFiles\css\assets\boxed_bgtile.png" />
+    <Content Include="StaticFiles\css\assets\bullet.png" />
+    <Content Include="StaticFiles\css\assets\bullets.png" />
+    <Content Include="StaticFiles\css\assets\bullets2.png" />
+    <Content Include="StaticFiles\css\assets\bullet_boxed.png" />
+    <Content Include="StaticFiles\css\assets\coloredbg.png" />
+    <Content Include="StaticFiles\css\assets\grain.png" />
+    <Content Include="StaticFiles\css\assets\gridtile.png" />
+    <Content Include="StaticFiles\css\assets\gridtile_3x3.png" />
+    <Content Include="StaticFiles\css\assets\gridtile_3x3_white.png" />
+    <Content Include="StaticFiles\css\assets\gridtile_white.png" />
+    <Content Include="StaticFiles\css\assets\large_left.png" />
+    <Content Include="StaticFiles\css\assets\large_right.png" />
+    <Content Include="StaticFiles\css\assets\loader.gif" />
+    <Content Include="StaticFiles\css\assets\loader2.gif" />
+    <Content Include="StaticFiles\css\assets\navigdots.png" />
+    <Content Include="StaticFiles\css\assets\navigdots_bgtile.png" />
+    <Content Include="StaticFiles\css\assets\next-slide.png" />
+    <Content Include="StaticFiles\css\assets\prev-slide.png" />
+    <Content Include="StaticFiles\css\assets\shadow1.png" />
+    <Content Include="StaticFiles\css\assets\shadow2.png" />
+    <Content Include="StaticFiles\css\assets\shadow3.png" />
+    <Content Include="StaticFiles\css\assets\small_left.png" />
+    <Content Include="StaticFiles\css\assets\small_left_boxed.png" />
+    <Content Include="StaticFiles\css\assets\small_right.png" />
+    <Content Include="StaticFiles\css\assets\small_right_boxed.png" />
+    <Content Include="StaticFiles\css\assets\timer.png" />
+    <Content Include="StaticFiles\css\assets\timerdot.png" />
+    <Content Include="StaticFiles\css\assets\transparent.jpg" />
+    <Content Include="StaticFiles\css\assets\white50.png" />
+    <Content Include="StaticFiles\css\bootstrap.css" />
+    <Content Include="StaticFiles\css\bootstrap1.css" />
+    <Content Include="StaticFiles\css\flaticon.css" />
+    <Content Include="StaticFiles\css\font-awesome.css" />
+    <Content Include="StaticFiles\css\hover.css" />
+    <Content Include="StaticFiles\css\jquery-ui.css" />
+    <Content Include="StaticFiles\css\jquery.datetimepicker.css" />
+    <Content Include="StaticFiles\css\jquery.fancybox.css" />
+    <Content Include="StaticFiles\css\jquery.mCustomScrollbar.min.css" />
+    <Content Include="StaticFiles\css\nouislider.css" />
+    <Content Include="StaticFiles\css\nouislider.pips.css" />
+    <Content Include="StaticFiles\css\owl.css" />
+    <Content Include="StaticFiles\css\responsive.css" />
+    <Content Include="StaticFiles\css\revolution-slider.css" />
+    <Content Include="StaticFiles\css\style.css" />
+    <Content Include="StaticFiles\fonts\flaticon.svg" />
+    <Content Include="StaticFiles\fonts\fontawesome-webfont.svg" />
+    <Content Include="StaticFiles\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="StaticFiles\fonts\revicons90c6.svg" />
+    <Content Include="StaticFiles\images\1.jpg" />
+    <Content Include="StaticFiles\images\2.jpg" />
+    <Content Include="StaticFiles\images\3.jpg" />
+    <Content Include="StaticFiles\images\background\1.jpg" />
+    <Content Include="StaticFiles\images\background\2.jpg" />
+    <Content Include="StaticFiles\images\background\3.jpg" />
+    <Content Include="StaticFiles\images\background\4.jpg" />
+    <Content Include="StaticFiles\images\background\5.jpg" />
+    <Content Include="StaticFiles\images\background\patten-1.png" />
+    <Content Include="StaticFiles\images\background\patten-2.png" />
+    <Content Include="StaticFiles\images\icons\icon-cross.png" />
+    <Content Include="StaticFiles\images\icons\icon-select.png" />
+    <Content Include="StaticFiles\images\icons\icon-toggle.png" />
+    <Content Include="StaticFiles\images\icons\map-marker.png" />
+    <Content Include="StaticFiles\images\icons\preloader.GIF" />
+    <Content Include="StaticFiles\images\icons\separator-one.png" />
+    <Content Include="StaticFiles\images\icons\submenu-icon.png" />
+    <Content Include="StaticFiles\images\IMG-20191019-WA0023.jpg" />
+    <Content Include="StaticFiles\images\logo-2.png" />
+    <Content Include="StaticFiles\images\logo-3.png" />
+    <Content Include="StaticFiles\images\logo-4.png" />
+    <Content Include="StaticFiles\images\logo-small.png" />
+    <Content Include="StaticFiles\images\logo.png" />
+    <Content Include="StaticFiles\images\resource\about-1.png" />
+    <Content Include="StaticFiles\images\resource\author-1.jpg" />
+    <Content Include="StaticFiles\images\resource\author-2.jpg" />
+    <Content Include="StaticFiles\images\resource\author-3.jpg" />
+    <Content Include="StaticFiles\images\resource\author-4.jpg" />
+    <Content Include="StaticFiles\images\resource\cause-single.jpg" />
+    <Content Include="StaticFiles\images\resource\causes-widget.jpg" />
+    <Content Include="StaticFiles\images\resource\credit-cards.png" />
+    <Content Include="StaticFiles\images\resource\donater-1.png" />
+    <Content Include="StaticFiles\images\resource\event-1.jpg" />
+    <Content Include="StaticFiles\images\resource\event-2.jpg" />
+    <Content Include="StaticFiles\images\resource\event-3.jpg" />
+    <Content Include="StaticFiles\images\resource\event-4.jpg" />
+    <Content Include="StaticFiles\images\resource\event-5.jpg" />
+    <Content Include="StaticFiles\images\resource\featured-image-1.jpg" />
+    <Content Include="StaticFiles\images\resource\featured-image-2.jpg" />
+    <Content Include="StaticFiles\images\resource\featured-image-3.jpg" />
+    <Content Include="StaticFiles\images\resource\featured-image-4.jpg" />
+    <Content Include="StaticFiles\images\resource\featured-image-5.jpg" />
+    <Content Include="StaticFiles\images\resource\featured-image-6.jpg" />
+    <Content Include="StaticFiles\images\resource\featured-image-7.jpg" />
+    <Content Include="StaticFiles\images\resource\founder.jpg" />
+    <Content Include="StaticFiles\images\resource\image-1.jpg" />
+    <Content Include="StaticFiles\images\resource\news-1.jpg" />
+    <Content Include="StaticFiles\images\resource\news-10.jpg" />
+    <Content Include="StaticFiles\images\resource\news-11.jpg" />
+    <Content Include="StaticFiles\images\resource\news-12.jpg" />
+    <Content Include="StaticFiles\images\resource\news-13.jpg" />
+    <Content Include="StaticFiles\images\resource\news-14.jpg" />
+    <Content Include="StaticFiles\images\resource\news-15.jpg" />
+    <Content Include="StaticFiles\images\resource\news-16.jpg" />
+    <Content Include="StaticFiles\images\resource\news-2.jpg" />
+    <Content Include="StaticFiles\images\resource\news-3.jpg" />
+    <Content Include="StaticFiles\images\resource\news-4.jpg" />
+    <Content Include="StaticFiles\images\resource\news-5.jpg" />
+    <Content Include="StaticFiles\images\resource\news-6.jpg" />
+    <Content Include="StaticFiles\images\resource\news-7.jpg" />
+    <Content Include="StaticFiles\images\resource\news-8.jpg" />
+    <Content Include="StaticFiles\images\resource\news-9.jpg" />
+    <Content Include="StaticFiles\images\resource\post-thumb-1.jpg" />
+    <Content Include="StaticFiles\images\resource\post-thumb-2.jpg" />
+    <Content Include="StaticFiles\images\resource\post-thumb-3.jpg" />
+    <Content Include="StaticFiles\images\resource\products\1.png" />
+    <Content Include="StaticFiles\images\resource\products\2.png" />
+    <Content Include="StaticFiles\images\resource\products\3.png" />
+    <Content Include="StaticFiles\images\resource\products\4.png" />
+    <Content Include="StaticFiles\images\resource\products\5.png" />
+    <Content Include="StaticFiles\images\resource\products\6.png" />
+    <Content Include="StaticFiles\images\resource\products\7.png" />
+    <Content Include="StaticFiles\images\resource\products\8.png" />
+    <Content Include="StaticFiles\images\resource\products\9.png" />
+    <Content Include="StaticFiles\images\resource\products\product-thumb-1.jpg" />
+    <Content Include="StaticFiles\images\resource\products\product-thumb-2.jpg" />
+    <Content Include="StaticFiles\images\resource\products\product-thumb-3.jpg" />
+    <Content Include="StaticFiles\images\resource\video-1.jpg" />
+    <Content Include="StaticFiles\images\resource\volunteer-image-1.png" />
+    <Content Include="StaticFiles\images\resource\volunteer-image-2.png" />
+    <Content Include="StaticFiles\images\resource\volunteer-image-3.png" />
+    <Content Include="StaticFiles\images\smallLogo %282%29.png" />
+    <Content Include="StaticFiles\images\smallLogo.png" />
+    <Content Include="StaticFiles\images\sponsors\1.png" />
+    <Content Include="StaticFiles\images\sponsors\2.png" />
+    <Content Include="StaticFiles\images\sponsors\3.png" />
+    <Content Include="StaticFiles\images\sponsors\4.png" />
+    <Content Include="StaticFiles\images\sponsors\5.png" />
+    <Content Include="StaticFiles\images\sponsors\6.png" />
+    <Content Include="StaticFiles\images\sponsors\7.png" />
+    <Content Include="StaticFiles\images\sponsors\8.png" />
+    <Content Include="StaticFiles\images\sponsors\9.png" />
+    <Content Include="StaticFiles\images\sponsors\footer-sponsor-1.png" />
+    <Content Include="StaticFiles\images\sponsors\footer-sponsor-2.png" />
+    <Content Include="StaticFiles\images\sponsors\footer-sponsor-3.png" />
+    <Content Include="StaticFiles\images\sponsors\footer-sponsor-4.png" />
+    <Content Include="StaticFiles\js\appear.js" />
+    <Content Include="StaticFiles\js\bootstrap.min.js" />
+    <Content Include="StaticFiles\js\jquery-ui.js" />
+    <Content Include="StaticFiles\js\jquery.countdown.js" />
+    <Content Include="StaticFiles\js\jquery.datetimepicker.js" />
+    <Content Include="StaticFiles\js\jquery.easing.min.js" />
+    <Content Include="StaticFiles\js\jquery.fancybox-media.js" />
+    <Content Include="StaticFiles\js\jquery.fancybox.pack.js" />
+    <Content Include="StaticFiles\js\jquery.js" />
+    <Content Include="StaticFiles\js\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="StaticFiles\js\map-script.js" />
+    <Content Include="StaticFiles\js\nouislider.js" />
+    <Content Include="StaticFiles\js\owl.js" />
+    <Content Include="StaticFiles\js\respond.js" />
+    <Content Include="StaticFiles\js\revolution.min.js" />
+    <Content Include="StaticFiles\js\script.js" />
+    <Content Include="StaticFiles\js\validate.js" />
+    <Content Include="StaticFiles\js\wow.js" />
+    <Content Include="StaticFiles\uploadedImages\063aacb3-5ce3-4ded-baf1-b8028b865cda_smallLogo.png" />
+    <Content Include="StaticFiles\uploadedImages\09d8e9e5-c5d3-4b9d-a49a-ac933d6e4aed_smallLogo.png" />
+    <Content Include="StaticFiles\uploadedImages\318d4731-bb66-4625-9102-813a88bed911_smallLogo.png" />
+    <Content Include="StaticFiles\uploadedImages\6b5af30a-6915-431a-b521-ad632011e8c8_smallLogo.png" />
+    <Content Include="StaticFiles\uploadedImages\807b470c-0a19-4ebd-8d94-eca1b92fe7e0_smallLogo.png" />
+    <Content Include="StaticFiles\uploadedImages\d4b62919-e639-4afc-bece-4e7950cb3b3e_smallLogo.png" />
+    <Content Include="StaticFiles\uploadedImages\eb5df66b-6b24-487d-93bf-886157a116c5_smallLogo.png" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ContactUsController.cs" />
+    <Compile Include="Controllers\EventsController.cs" />
+    <Compile Include="Data\ApplicationDbContext.cs" />
+    <Compile Include="DependencyContainer\UnityConfig.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ContactUs.cs" />
+    <Compile Include="Models\EventCategory.cs" />
+    <Compile Include="Models\UpcomingEvents.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AccountRepository.cs" />
+    <Compile Include="Repositories\ContactUsRepository.cs" />
+    <Compile Include="Repositories\EventRepository.cs" />
+    <Compile Include="Repositories\IAccountRepository.cs" />
+    <Compile Include="Repositories\IContactUsRepository.cs" />
+    <Compile Include="Repositories\IEventsRepository.cs" />
+    <Compile Include="ViewModels\ContactViewModel.cs" />
+    <Compile Include="ViewModels\EventViewModel.cs" />
+    <Compile Include="ViewModels\RegistrationViewModel.cs" />
+    <Compile Include="ViewModels\UserViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="StaticFiles\css\assets\arrows.psd" />
+    <Content Include="StaticFiles\css\assets\bullets.psd" />
+    <Content Include="StaticFiles\css\assets\small_arrows.psd" />
+    <Content Include="StaticFiles\fonts\flaticon.eot" />
+    <Content Include="StaticFiles\fonts\flaticon.ttf" />
+    <Content Include="StaticFiles\fonts\flaticon.woff" />
+    <Content Include="StaticFiles\fonts\fontawesome-webfont.eot" />
+    <Content Include="StaticFiles\fonts\fontawesome-webfont.ttf" />
+    <Content Include="StaticFiles\fonts\fontawesome-webfont.woff" />
+    <Content Include="StaticFiles\fonts\fontawesome-webfont.woff2" />
+    <Content Include="StaticFiles\fonts\FontAwesome.otf" />
+    <Content Include="StaticFiles\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="StaticFiles\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="StaticFiles\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="StaticFiles\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="StaticFiles\fonts\revicons90c6.eot" />
+    <Content Include="StaticFiles\fonts\revicons90c6.ttf" />
+    <Content Include="StaticFiles\fonts\revicons90c6.woff" />
+    <Content Include="StaticFiles\images\resource\.DS_Store" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\ContactUs\" />
+    <Folder Include="Views\Events\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nog.Prayas.Data\Nog.Prayas.Data.csproj">
+      <Project>{39C5D5B7-869C-422D-B1D5-B2C44F7490A4}</Project>
+      <Name>Nog.Prayas.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56720</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56720/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
