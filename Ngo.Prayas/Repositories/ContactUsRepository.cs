@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Ngo.Prayas.Models;
+using Ngo.Prayas.ViewModels;
 using Nog.Prayas.Data;
 
 namespace Ngo.Prayas.Repositories
@@ -21,9 +22,18 @@ namespace Ngo.Prayas.Repositories
             _dBEntities.ContactUs.Add(contactUs);
         }
 
-        public IEnumerable<ContactU> GetAll()
+        
+        public IEnumerable<ContactViewModel> GetAll()
         {
-            return _dBEntities.ContactUs.ToList();
+            return _dBEntities.ContactUs.Select(x => new ContactViewModel()
+            {
+                Name = x.Name,
+                Description = x.Description,
+                EmailId = x.EmailId,
+                MobileNumber = x.MobileNumber,
+                IsActive = x.IsActive,
+                Id = x.Id
+            }).ToList();
         }
 
         public void GetContact(int id)

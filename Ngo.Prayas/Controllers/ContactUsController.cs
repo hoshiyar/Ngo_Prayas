@@ -52,5 +52,11 @@ namespace Ngo.Prayas.Controllers
             return View();
         }
 
+
+        public ActionResult Contacts()
+        {
+            List<ContactViewModel> model = _contactRepo.GetAll().ToList();
+            return View(model);
+        }
     }
 }

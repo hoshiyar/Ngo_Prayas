@@ -59,12 +59,13 @@ namespace Ngo.Prayas.Controllers
             }
         }
 
-
+        [HttpPost]
         public ActionResult Registration()
         {
             return View();
         }
 
+        [HttpGet]
         public ActionResult Registration(UserViewModel model)
         {
             if (ModelState.IsValid)

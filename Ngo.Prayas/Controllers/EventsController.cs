@@ -33,6 +33,23 @@ namespace Ngo.Prayas.Controllers
         [HttpPost]
         public ActionResult Create(EventViewModel model)
         {
+            if(!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            Nog.Prayas.Data.Event events = new Nog.Prayas.Data.Event
+            {
+                EventName = model.EventName,
+                EventStartTime = model.EventStartTime,
+                EventEndTime = model.EventEndTime,
+                EventLocation = model.EventLocation,
+                EventDescription = model.EventDescription,
+                EventDate = model.EventDate,
+                CategoryId = model.CategoryId
+            };
+
+            _eventRepo.Create(events);
+            
             return View();
         }
 

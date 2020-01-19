@@ -365,6 +365,9 @@
     <Content Include="Views\ContactUs\ContactUs.cshtml" />
     <Content Include="Views\Donation\Index.cshtml" />
     <Content Include="Views\Account\Registration.cshtml" />
+    <Content Include="Views\ContactUs\Contacts.cshtml" />
+    <Content Include="Views\Events\Index.cshtml" />
+    <Content Include="Views\Events\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -374,7 +377,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Events\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Nog.Prayas.Data\Nog.Prayas.Data.csproj">

@@ -1,4 +1,5 @@
-﻿using Nog.Prayas.Data;
+﻿using Ngo.Prayas.ViewModels;
+using Nog.Prayas.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace Ngo.Prayas.Repositories
     {
         void Create(ContactU contactUs);
 
-        IEnumerable<ContactU> GetAll();
+        IEnumerable<ContactViewModel> GetAll();
 
         void GetContact(int id);
 
