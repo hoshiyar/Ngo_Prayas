@@ -26,7 +26,12 @@ namespace Ngo.Prayas.Controllers
         [HttpPost]
         public ActionResult ContactUs(ContactViewModel model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            try
             {
                 ContactU contact = new ContactU()
                 {
@@ -40,8 +45,11 @@ namespace Ngo.Prayas.Controllers
                 };
                 _contactRepo.Create(contact);
             }
+            catch(Exception ex)
+            {
 
-            return View(model);
+            }
+            return View();
         }
 
     }

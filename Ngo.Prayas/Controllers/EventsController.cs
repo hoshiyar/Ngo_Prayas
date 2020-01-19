@@ -37,16 +37,6 @@ namespace Ngo.Prayas.Controllers
         }
 
 
-
-
-
-
-
-
-
-
-
-
         private List<EventCategory> GetCategories()
         {
             List<EventCategory> categories = new List<EventCategory>();

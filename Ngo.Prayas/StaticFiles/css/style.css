@@ -538,7 +538,7 @@ img{
 	position:relative;
 	float:left;
 	left:0px;
-	padding:25px 0px;
+	padding:10px 0px;
 	z-index:10;	
 }
 
@@ -4541,7 +4541,7 @@ img{
  
 .page-title{
 	position:relative;
-	padding:120px 120px;
+	padding:60px 120px;
 	text-align:center;
 	background-size:cover;
 	background-attachment:fixed;
@@ -4668,7 +4668,7 @@ img{
 
 .contact-section{
 	position:relative;
-	padding:115px 0px 100px;
+	padding:30px 0px 100px;
 }
 
 .contact-section h2{
