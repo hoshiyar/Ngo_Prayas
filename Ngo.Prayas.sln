@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngo.Prayas", "Ngo.Prayas\Ng
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nog.Prayas.Data", "Nog.Prayas.Data\Nog.Prayas.Data.csproj", "{39C5D5B7-869C-422D-B1D5-B2C44F7490A4}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Ng_Prayas.Db", "Ng_Prayas.Db\Ng_Prayas.Db.sqlproj", "{C5E7C952-09F0-452D-A7E0-FE6BC400AE4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,12 @@ Global
 		{39C5D5B7-869C-422D-B1D5-B2C44F7490A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39C5D5B7-869C-422D-B1D5-B2C44F7490A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39C5D5B7-869C-422D-B1D5-B2C44F7490A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5E7C952-09F0-452D-A7E0-FE6BC400AE4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5E7C952-09F0-452D-A7E0-FE6BC400AE4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5E7C952-09F0-452D-A7E0-FE6BC400AE4C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C5E7C952-09F0-452D-A7E0-FE6BC400AE4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5E7C952-09F0-452D-A7E0-FE6BC400AE4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5E7C952-09F0-452D-A7E0-FE6BC400AE4C}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
