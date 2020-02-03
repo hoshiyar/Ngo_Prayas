@@ -19,5 +19,7 @@ namespace Ngo.Prayas.Repositories
         void SaveChanges();
 
         IEnumerable<Event> GetCategories();
+
+        void AddEventImages(Event_Gallery eventGallery);
     }
 }

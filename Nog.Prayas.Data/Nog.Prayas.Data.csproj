@@ -54,62 +54,65 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContactU.cs">
-      <DependentUpon>NgoPrayasDB.tt</DependentUpon>
+      <DependentUpon>NgoDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Event.cs">
-      <DependentUpon>NgoPrayasDB.tt</DependentUpon>
+      <DependentUpon>NgoDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="EventCategory.cs">
-      <DependentUpon>NgoPrayasDB.tt</DependentUpon>
+      <DependentUpon>NgoDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="NgoPrayasDB.Context.cs">
+    <Compile Include="Event_Gallery.cs">
+      <DependentUpon>NgoDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NgoDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NgoPrayasDB.Context.tt</DependentUpon>
+      <DependentUpon>NgoDataModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="NgoPrayasDB.cs">
+    <Compile Include="NgoDataModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NgoPrayasDB.tt</DependentUpon>
+      <DependentUpon>NgoDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="NgoPrayasDB.Designer.cs">
+    <Compile Include="NgoDataModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NgoPrayasDB.edmx</DependentUpon>
+      <DependentUpon>NgoDataModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Role.cs">
-      <DependentUpon>NgoPrayasDB.tt</DependentUpon>
+      <DependentUpon>NgoDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>NgoPrayasDB.tt</DependentUpon>
+      <DependentUpon>NgoDataModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="NgoPrayasDB.edmx">
+    <EntityDeploy Include="NgoDataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>NgoPrayasDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>NgoDataModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="NgoPrayasDB.edmx.diagram">
-      <DependentUpon>NgoPrayasDB.edmx</DependentUpon>
+    <None Include="NgoDataModel.edmx.diagram">
+      <DependentUpon>NgoDataModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="NgoPrayasDB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NgoPrayasDB.edmx</DependentUpon>
-      <LastGenOutput>NgoPrayasDB.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="NgoPrayasDB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NgoPrayasDB.edmx</DependentUpon>
-      <LastGenOutput>NgoPrayasDB.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="NgoDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NgoDataModel.edmx</DependentUpon>
+      <LastGenOutput>NgoDataModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="NgoDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NgoDataModel.edmx</DependentUpon>
+      <LastGenOutput>NgoDataModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

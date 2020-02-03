@@ -13,10 +13,10 @@ namespace Nog.Prayas.Data
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Ngo_Prayas_DBEntities : DbContext
+    public partial class Ngo_Prayas_DBEntities1 : DbContext
     {
-        public Ngo_Prayas_DBEntities()
-            : base("name=Ngo_Prayas_DBEntities")
+        public Ngo_Prayas_DBEntities1()
+            : base("name=Ngo_Prayas_DBEntities1")
         {
         }
     
@@ -25,6 +25,7 @@ namespace Nog.Prayas.Data
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Event_Gallery> Event_Gallery { get; set; }
         public virtual DbSet<EventCategory> EventCategories { get; set; }
         public virtual DbSet<Event> Events { get; set; }
         public virtual DbSet<Role> Roles { get; set; }

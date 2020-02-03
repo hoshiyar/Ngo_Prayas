@@ -319,6 +319,7 @@
     </Compile>
     <Compile Include="Models\ContactUs.cs" />
     <Compile Include="Models\EventCategory.cs" />
+    <Compile Include="Models\EventGallery.cs" />
     <Compile Include="Models\UpcomingEvents.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

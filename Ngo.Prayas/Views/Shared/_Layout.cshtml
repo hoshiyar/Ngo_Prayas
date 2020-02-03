@@ -36,11 +36,11 @@
                         <!--Top Right-->
                         <div class="top-right">
                             <div class="social-icon">
-                                <a href="#"><span class="fa fa-facebook"></span></a>
-                                <a href="#"><span class="fa fa-twitter"></span></a>
-                                <a href="#"><span class="fa fa-google-plus"></span></a>
-                                <a href="#"><span class="fa fa-youtube"></span></a>
-                                <a href="#"><span class="fa fa-instagram"></span></a>
+                                @Html.ActionLink("Login", "Login", "Account")
+                                @*<a href="#"><span class="fa fa-twitter"></span></a>
+                                    <a href="#"><span class="fa fa-google-plus"></span></a>
+                                    <a href="#"><span class="fa fa-youtube"></span></a>
+                                    <a href="#"><span class="fa fa-instagram"></span></a>*@
                             </div>
                         </div>
 
@@ -78,53 +78,54 @@
 
                                             <li> @Html.ActionLink("Home", "Home", "Default")</li>
                                             @*<ul>
-                                                <li><a href="index.html">Home Style One</a></li>
-                                                <li><a href="index-2.html">Home Style Two</a></li>
-                                                <li><a href="index-3.html">Home Style Three</a></li>
-                                                <li class="dropdown">
-                                                    <a href="#">Header Styles</a>
-                                                    <ul>
-                                                        <li><a href="index.html">Header Style One</a></li>
-                                                        <li><a href="index-2.html">Header Style Two</a></li>
-                                                        <li><a href="index-3.html">Header Style Three</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>*@
+                                                    <li><a href="index.html">Home Style One</a></li>
+                                                    <li><a href="index-2.html">Home Style Two</a></li>
+                                                    <li><a href="index-3.html">Home Style Three</a></li>
+                                                    <li class="dropdown">
+                                                        <a href="#">Header Styles</a>
+                                                        <ul>
+                                                            <li><a href="index.html">Header Style One</a></li>
+                                                            <li><a href="index-2.html">Header Style Two</a></li>
+                                                            <li><a href="index-3.html">Header Style Three</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>*@
 
                                             <li>
                                                 @Html.ActionLink("About Us", "AboutUs", "Default")
                                             </li>
                                             @*<li><a asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a></li>
-                                            <li><a href="services.html">Services</a></li>*@
+                                                <li><a href="services.html">Services</a></li>*@
                                             @*<li class="dropdown">
-                                                <a href="#">Causes</a>
-                                                <ul>
-                                                    <li><a href="causes.html">Causes</a></li>
-                                                    <li><a href="causes-single.html">Causes Single</a></li>
-                                                </ul>
-                                            </li>*@
+                                                    <a href="#">Causes</a>
+                                                    <ul>
+                                                        <li><a href="causes.html">Causes</a></li>
+                                                        <li><a href="causes-single.html">Causes Single</a></li>
+                                                    </ul>
+                                                </li>*@
                                             <li class="dropdown">
                                                 @Html.ActionLink("Event", "Index", "Events")
                                                 @*<a asp-area="" asp-controller="Events" asp-action="Index">Events</a>*@
                                                 <ul>
                                                     <li> @Html.ActionLink("Event", "Index", "Events")</li>
                                                     <li><a href="event-single.html">Events Single</a></li>
-                                                </ul>
-                                            </li>
-                                            @*<li class="dropdown">
-                                                <a href="#">Pages</a>
-                                                <ul>
-                                                    <li><a href="gallery.html">Portfolio</a></li>
-                                                    <li><a href="shop.html">Our Shop</a></li>
+                                                    <li>@Html.ActionLink("Create Event", "Create", "Events")</li>
                                                 </ul>
                                             </li>
                                             <li class="dropdown">
-                                                <a href="#">Blog</a>
+                                                <a href="#">Account</a>
                                                 <ul>
-                                                    <li><a href="blog.html">Our Blog</a></li>
-                                                    <li><a href="blog-single.html">Blog Single</a></li>
+                                                    <li> @Html.ActionLink("Login", "Login", "Account")</li>
+                                                    <li>@Html.ActionLink("Registration", "Registration", "Account")</li>
                                                 </ul>
-                                            </li>*@
+                                            </li>
+                                            @*@<li class="dropdown">
+                                                    <a href="#">Blog</a>
+                                                    <ul>
+                                                        <li><a href="blog.html">Our Blog</a></li>
+                                                        <li><a href="blog-single.html">Blog Single</a></li>
+                                                    </ul>
+                                                </li>*@
                                             <li> @Html.ActionLink("Contact Us", "ContactUs", "ContactUs")</li>
 
                                         </ul>
@@ -152,84 +153,8 @@
         @RenderBody()
 
         <!--Main Footer-->
-        <footer class="main-footer">
-            <div class="widgets-section">
-                <div class="auto-container">
-                    <div class="row clearfix">
-                        <!--Footer Column-->
-                        <div class="footer-column col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                            <div class="footer-widget contact-widget">
-                                <div class="footer-logo"><a href="index.html"><img src="images/logo-3.png" alt=""></a></div>
-                                <div class="widget-content">
-                                    <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</div>
-                                    <ul class="contact-info">
-                                        <li><div class="icon"><span class="flaticon-house"></span></div>Collins Street West,121 King Street, Melbourne.</li>
-                                        <li><div class="icon"><span class="flaticon-technology-1"></span></div>+(11)123 456 7890, </li>
-                                        <li><div class="icon"><span class="flaticon-envelope-1"></span></div> info@ngoprayas.com</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Footer Column-->
-                        <div class="footer-column col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                            <div class="footer-widget gallery-widget">
-                                <h2>Our GALLERY</h2>
-                                <div class="widget-content">
-                                    <div class="images-outer clearfix">
-                                        <!--Image Box-->
-                                        <figure class="image-box"><a href="~/StaticFile/images/resource/featured-image-1.jpg" class="lightbox-image" title="Image Title Here" data-fancybox-group="footer-gallery"><img src="images/gallery/footer-gallery-thumb-1.jpg" alt=""></a></figure>
-                                        <!--Image Box-->
-                                        <figure class="image-box"><a href="~/StaticFile/images/resource/featured-image-2.jpg" class="lightbox-image" title="Image Title Here" data-fancybox-group="footer-gallery"><img src="images/gallery/footer-gallery-thumb-2.jpg" alt=""></a></figure>
-                                        <!--Image Box-->
-                                        <figure class="image-box"><a href="~/StaticFile/images/resource/featured-image-3.jpg" class="lightbox-image" title="Image Title Here" data-fancybox-group="footer-gallery"><img src="images/gallery/footer-gallery-thumb-3.jpg" alt=""></a></figure>
-                                        <!--Image Box-->
-                                        <figure class="image-box"><a href="~/StaticFile/images/resource/featured-image-1.jpg" class="lightbox-image" title="Image Title Here" data-fancybox-group="footer-gallery"><img src="images/gallery/footer-gallery-thumb-4.jpg" alt=""></a></figure>
-                                        <!--Image Box-->
-                                        <figure class="image-box"><a href="~/StaticFile/images/resource/featured-image-2.jpg" class="lightbox-image" title="Image Title Here" data-fancybox-group="footer-gallery"><img src="images/gallery/footer-gallery-thumb-5.jpg" alt=""></a></figure>
-                                        <!--Image Box-->
-                                        <figure class="image-box"><a href="~/StaticFile/images/resource/featured-image-3.jpg" class="lightbox-image" title="Image Title Here" data-fancybox-group="footer-gallery"><img src="images/gallery/footer-gallery-thumb-6.jpg" alt=""></a></figure>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Footer Column-->
-                        <div class="footer-column col-lg-5 col-md-4 col-sm-6 col-xs-12">
-                            <div class="footer-widget partner-widget">
-                                <h2>OUR PARTNERS</h2>
-                                <!--footer sponsors slider-->
-                                <div class="footer-sponsors-slider owl-carousel owl-theme">
-                                    <div class="slide">
-                                        <a href="#"><img src="~/StaticFile/images/sponsors/footer-sponsor-1.png" alt="" /></a>
-                                    </div>
-                                    <div class="slide">
-                                        <a href="#"><img src="~/StaticFile/images/sponsors/footer-sponsor-2.png" alt="" /></a>
-                                    </div>
-                                    <div class="slide">
-                                        <a href="#"><img src="~/StaticFile/images/sponsors/footer-sponsor-3.png" alt="" /></a>
-                                    </div>
-                                    <div class="slide">
-                                        <a href="#"><img src="~/StaticFile/images/sponsors/footer-sponsor-4.png" alt="" /></a>
-                                    </div>
-                                    <div class="slide">
-                                        <a href="#"><img src="~/StaticFiles/images/sponsors/footer-sponsor-1.png" alt="" /></a>
-                                    </div>
-                                    <div class="slide">
-                                        <a href="#"><img src="~/StaticFiles/images/sponsors/footer-sponsor-2.png" alt="" /></a>
-                                    </div>
-                                    <div class="slide">
-                                        <a href="#"><img src="~/StaticFile/images/sponsors/footer-sponsor-3.png" alt="" /></a>
-                                    </div>
-                                    <div class="slide">
-                                        <a href="#"><img src="~/StaticFile/images/sponsors/footer-sponsor-4.png" alt="" /></a>
-                                    </div>
-                                </div>
+        <footer class="main-footer" style="max-height:50px;">
 
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="footer-bottom">
                 <div class="auto-container">
                     <div class="row clearfix">

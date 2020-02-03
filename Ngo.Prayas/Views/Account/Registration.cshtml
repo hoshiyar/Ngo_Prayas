@@ -7,46 +7,62 @@
 
 <h2>Registration</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Registration", "Account", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>UserViewModel</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.EmailId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.EmailId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "text-danger" })
+    <section class="page-title" style="background-image:url(/staticfiles/images/background/5.jpg);">
+        <div class="auto-container">
+            <div class="inner-box">
+                <h1>Registration</h1>
+                <ul class="bread-crumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li>Account</li>
+                </ul>
             </div>
         </div>
+    </section>
+    <!--Contact Section-->
+    <section class="contact-section" style="padding:40px 0px 100px;">
+        <div class="auto-container" style=" margin: auto;width: 50%;border: 2px solid #06d666;padding: 10px;">
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            <h2>Register</h2>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <!--Contact Form-->
+            <div class="contact-form">
+                <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" style="width:315px;margin:auto;">
+                    <h4>Use a local account to log in.</h4>
+                    <hr />
+                    <div class="form-group">
+                        @*<label asp-for="Email" style="width:150px; display:inline-block;"></label>*@
+                        @Html.LabelFor(model => model.EmailId, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @*<input asp-for="Email" type="text" name="Email" placeholder="Email" />*@
+                        @Html.TextBoxFor(model => model.EmailId, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        @*<label asp-for="Password" style="width:150px; display:inline-block;"></label>*@
+                        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.TextBoxFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        @*<input asp-for="Password" type="text" name="Password" placeholder="Password" />
+                            <span asp-validation-for="Password" class="text-danger"></span>*@
+                    </div>
+                    <div class="form-group">
+                        @*<label asp-for="Password" style="width:150px; display:inline-block;"></label>*@
+                        @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.TextBoxFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                        @*<input asp-for="Password" type="text" name="Password" placeholder="Password" />
+                            <span asp-validation-for="Password" class="text-danger"></span>*@
+                    </div>
+                    <div class="form-group" style="float:right;">
+                        <button type="submit" class="btn btn-default">Registration</button>
+                    </div>
+                </form>
             </div>
-        </div>
+            <!--End Contact Form-->
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
-            </div>
         </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
+    </section>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

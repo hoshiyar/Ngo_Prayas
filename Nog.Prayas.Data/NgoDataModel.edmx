@@ -26,6 +26,18 @@ warning 6002: The table/view 'Ngo_Prayas_DB.dbo.ContactUs' does not have a prima
           <Property Name="CreatedDate" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="ModifiedDate" Type="datetime2" Precision="7" />
         </EntityType>
+        <EntityType Name="Event_Gallery">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ImageName" Type="varchar" MaxLength="1000" Nullable="false" />
+          <Property Name="EventId" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsBaseImage" Type="bit" />
+        </EntityType>
         <EntityType Name="EventCategories">
           <Key>
             <PropertyRef Name="CategoryId" />
@@ -43,13 +55,11 @@ warning 6002: The table/view 'Ngo_Prayas_DB.dbo.ContactUs' does not have a prima
           <Property Name="EventDate" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="EventStartTime" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="EventEndTime" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="CategoryId" Type="int" />
           <Property Name="CreatedDate" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="ModifiedDate" Type="datetime2" Precision="7" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
-          <Property Name="NoOfClicks" Type="int" />
           <Property Name="EventLocation" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="ImagePath" Type="nvarchar" MaxLength="250" Nullable="false" />
-          <Property Name="CategoryId" Type="int" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
@@ -94,7 +104,20 @@ warning 6002: The table/view 'Ngo_Prayas_DB.dbo.ContactUs' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Event_Gallery_Events">
+          <End Role="Events" Type="Self.Events" Multiplicity="1" />
+          <End Role="Event_Gallery" Type="Self.Event_Gallery" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Events">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Event_Gallery">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="Ngo_Prayas_DBModelStoreContainer">
+          <EntitySet Name="Event_Gallery" EntityType="Self.Event_Gallery" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EventCategories" EntityType="Self.EventCategories" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Events" EntityType="Self.Events" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
@@ -119,12 +142,29 @@ warning 6002: The table/view 'Ngo_Prayas_DB.dbo.ContactUs' does not have a prima
             <End Role="Roles" EntitySet="Roles" />
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
+          <AssociationSet Name="FK_Event_Gallery_Events" Association="Self.FK_Event_Gallery_Events">
+            <End Role="Events" EntitySet="Events" />
+            <End Role="Event_Gallery" EntitySet="Event_Gallery" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Ngo_Prayas_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Event_Gallery">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImageName" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EventId" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsBaseImage" Type="Boolean" />
+          <NavigationProperty Name="Event" Relationship="Self.FK_Event_Gallery_Events" FromRole="Event_Gallery" ToRole="Events" />
+        </EntityType>
         <EntityType Name="EventCategory">
           <Key>
             <PropertyRef Name="CategoryId" />
@@ -143,13 +183,12 @@ warning 6002: The table/view 'Ngo_Prayas_DB.dbo.ContactUs' does not have a prima
           <Property Name="EventDate" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="EventStartTime" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="EventEndTime" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CategoryId" Type="Int32" />
           <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="ModifiedDate" Type="DateTime" Precision="7" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
-          <Property Name="NoOfClicks" Type="Int32" />
           <Property Name="EventLocation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ImagePath" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="CategoryId" Type="Int32" />
+          <NavigationProperty Name="Event_Gallery" Relationship="Self.FK_Event_Gallery_Events" FromRole="Events" ToRole="Event_Gallery" />
           <NavigationProperty Name="EventCategory" Relationship="Self.FK__Events__Category__3F466844" FromRole="Events" ToRole="EventCategories" />
         </EntityType>
         <EntityType Name="Role">
@@ -192,6 +231,18 @@ warning 6002: The table/view 'Ngo_Prayas_DB.dbo.ContactUs' does not have a prima
           <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="ModifiedDate" Type="DateTime" Precision="7" />
         </EntityType>
+        <Association Name="FK_Event_Gallery_Events">
+          <End Role="Events" Type="Self.Event" Multiplicity="1" />
+          <End Role="Event_Gallery" Type="Self.Event_Gallery" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Events">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Event_Gallery">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Events__Category__3F466844">
           <End Role="EventCategories" Type="Self.EventCategory" Multiplicity="0..1" />
           <End Role="Events" Type="Self.Event" Multiplicity="*" />
@@ -216,12 +267,17 @@ warning 6002: The table/view 'Ngo_Prayas_DB.dbo.ContactUs' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Ngo_Prayas_DBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Ngo_Prayas_DBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Event_Gallery" EntityType="Self.Event_Gallery" />
           <EntitySet Name="EventCategories" EntityType="Self.EventCategory" />
           <EntitySet Name="Events" EntityType="Self.Event" />
           <EntitySet Name="Roles" EntityType="Self.Role" />
           <EntitySet Name="Users" EntityType="Self.User" />
           <EntitySet Name="ContactUs" EntityType="Self.ContactU" />
+          <AssociationSet Name="FK_Event_Gallery_Events" Association="Self.FK_Event_Gallery_Events">
+            <End Role="Events" EntitySet="Events" />
+            <End Role="Event_Gallery" EntitySet="Event_Gallery" />
+          </AssociationSet>
           <AssociationSet Name="FK__Events__Category__3F466844" Association="Self.FK__Events__Category__3F466844">
             <End Role="EventCategories" EntitySet="EventCategories" />
             <End Role="Events" EntitySet="Events" />
@@ -236,7 +292,20 @@ warning 6002: The table/view 'Ngo_Prayas_DB.dbo.ContactUs' does not have a prima
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Ngo_Prayas_DBModelStoreContainer" CdmEntityContainer="Ngo_Prayas_DBEntities">
+        <EntityContainerMapping StorageEntityContainer="Ngo_Prayas_DBModelStoreContainer" CdmEntityContainer="Ngo_Prayas_DBEntities1">
+          <EntitySetMapping Name="Event_Gallery">
+            <EntityTypeMapping TypeName="Ngo_Prayas_DBModel.Event_Gallery">
+              <MappingFragment StoreEntitySet="Event_Gallery">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+                <ScalarProperty Name="EventId" ColumnName="EventId" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsBaseImage" ColumnName="IsBaseImage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="EventCategories">
             <EntityTypeMapping TypeName="Ngo_Prayas_DBModel.EventCategory">
               <MappingFragment StoreEntitySet="EventCategories">
@@ -254,13 +323,11 @@ warning 6002: The table/view 'Ngo_Prayas_DB.dbo.ContactUs' does not have a prima
                 <ScalarProperty Name="EventDate" ColumnName="EventDate" />
                 <ScalarProperty Name="EventStartTime" ColumnName="EventStartTime" />
                 <ScalarProperty Name="EventEndTime" ColumnName="EventEndTime" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="NoOfClicks" ColumnName="NoOfClicks" />
                 <ScalarProperty Name="EventLocation" ColumnName="EventLocation" />
-                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
-                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -12,21 +12,16 @@ namespace Nog.Prayas.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Event
+    public partial class Event_Gallery
     {
         public int Id { get; set; }
-        public string EventName { get; set; }
-        public string EventDescription { get; set; }
-        public System.DateTime EventDate { get; set; }
-        public string EventStartTime { get; set; }
-        public string EventEndTime { get; set; }
-        public Nullable<int> CategoryId { get; set; }
-        public System.DateTime CreatedDate { get; set; }
+        public string ImageName { get; set; }
+        public Nullable<int> EventId { get; set; }
+        public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }
-        public bool IsActive { get; set; }
-        public string EventLocation { get; set; }
+        public Nullable<bool> IsActive { get; set; }
+        public Nullable<bool> IsBaseImage { get; set; }
     
-        public virtual Event_Gallery Event_Gallery { get; set; }
-        public virtual EventCategory EventCategory { get; set; }
+        public virtual Event Event { get; set; }
     }
 }

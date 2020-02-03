@@ -19,13 +19,6 @@ namespace Ngo.Prayas.ViewModels
 
         public string EventEndTime { get; set; }
 
-        public DateTime CreatedDate { get; set; }
-
-        public DateTime ModifiedDate { get; set; }
-
-        public bool IsActive { get; set; }
-
-        public int NoOfClicks { get; set; }
 
         public string EventLocation { get; set; }
 
@@ -39,6 +32,13 @@ namespace Ngo.Prayas.ViewModels
 
         public int CategoryId { get; set; }
 
-    //    public List<EventCategory> Categories { get; set; }
+        //    public List<EventCategory> Categories { get; set; }
+
+
+        public DateTime CreatedDate { get; set; }
+
+        public DateTime ModifiedDate { get; set; }
+
+        public bool IsActive { get; set; }
     }
 }

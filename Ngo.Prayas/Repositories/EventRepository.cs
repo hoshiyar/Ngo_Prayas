@@ -47,5 +47,10 @@ namespace Ngo.Prayas.Repositories
         {
             _dbContext.SaveChanges();
         }
+
+        public void AddEventImages(Event_Gallery eventGallery)
+        {
+            _dbContext.Event_Gallery.Add(eventGallery);
+        }
     }
 }

@@ -511,10 +511,10 @@ img{
     -o-transition: all 500ms ease;
 }
 
-.main-header .social-icon a:hover{
+/*.main-header .social-icon a:hover{
 	color:#ffffff;
 	background-color:#06d666;
-}
+}*/
 
 .main-header .main-box{
 	position:relative;
@@ -4541,7 +4541,7 @@ img{
  
 .page-title{
 	position:relative;
-	padding:60px 120px;
+	padding:25px 120px;
 	text-align:center;
 	background-size:cover;
 	background-attachment:fixed;

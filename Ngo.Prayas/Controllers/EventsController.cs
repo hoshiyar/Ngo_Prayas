@@ -37,6 +37,16 @@ namespace Ngo.Prayas.Controllers
             {
                 return View(model);
             }
+
+            string fileName = string.Empty;
+           if( model.FileAttach.ContentLength > 0)
+            {
+
+                fileName = System.IO.Path.GetFileName(model.FileAttach.FileName) + "_" + Guid.NewGuid();
+                string _path = System.IO.Path.Combine(Server.MapPath("~/UploadedFiles"), fileName);
+                model.FileAttach.SaveAs(_path);
+            }
+
             Nog.Prayas.Data.Event events = new Nog.Prayas.Data.Event
             {
                 EventName = model.EventName,
@@ -48,8 +58,20 @@ namespace Ngo.Prayas.Controllers
                 CategoryId = model.CategoryId
             };
 
-            _eventRepo.Create(events);
-            
+            Nog.Prayas.Data.Event eventAdded = _eventRepo.Create(events);
+
+            Nog.Prayas.Data.Event_Gallery eventGallery = new Nog.Prayas.Data.Event_Gallery
+            {
+                EventId = eventAdded.Id,
+                ImageName = fileName,
+                IsActive = true,
+                IsBaseImage = true,
+                CreatedDate = DateTime.Now,
+                ModifiedDate = DateTime.Now
+            };
+
+            _eventRepo.AddEventImages(eventGallery);
+
             return View();
         }
 
