@@ -5,12 +5,13 @@
 }
 
 
+
 <link href="~/css/jquery.datetimepicker.css" rel="stylesheet" />
 <link href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
 @using (Html.BeginForm("Create", "Events", FormMethod.Post))
 {
+
 
     <section class="page-title" style="background-image:url(/StaticFiles/images/background/5.jpg);">
         <div class="auto-container">
@@ -33,139 +34,144 @@
 
             <!--Contact Form-->
             <div class="contact-form">
+                <div class="row clearfix">
+                    <div class="form-group col-md-6">
+                        <div class="field-label">Event Name</div>
 
-                <div class="form-group col-md-6">
-                    <div class="field-label">Event Name</div>
+                        @Html.TextBoxFor(model => model.EventName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.EventName, "", new { @class = "text-danger" })
 
-                    @Html.TextBoxFor(model => model.EventName, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.EventName, "", new { @class = "text-danger" })
-
-                </div>
-                <div class="form-group col-md-6">
-                    <div class="field-label">Event Location</div>
-                    @Html.TextBoxFor(model => model.EventLocation, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.EventLocation, "", new { @class = "text-danger" })
-
-                </div>
-                <div class="form-group col-md-6">
-                    <div class="field-label">Event Start Date</div>
-                    @Html.TextBoxFor(model => model.EventDate, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.EventDate, "", new { @class = "text-danger" })
-
-                </div>
-                <div class="form-group col-md-6">
-                    <div class="field-label" style="width:40%;float:left;">Start Time</div>
-                    <div class="field-label" style="width:40%;float:right;">End Time</div>
-                    @Html.TextBoxFor(model => model.EventStartTime, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.EventStartTime, "", new { @class = "text-danger" })
-                    @Html.TextBoxFor(model => model.EventEndTime, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.EventEndTime, "", new { @class = "text-danger" })
-
-                </div>
-
-                <div class="form-group col-md-6">
-                    <div class="field-label">Event Image</div>
-                    <div class="editor-field">
-
-                        @Html.TextBoxFor(model => model.FileAttach, "", new { type = "file" })
-                        @*<input asp-for="Photo" name="Photo" id="eventImage">
-                            <span asp-validation-for="Photo" class="text-danger"></span>*@
                     </div>
-                </div>
-                <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                    <div class="field-label">Event Category</div>
-                    @*<select asp-for="CategoryId" class="form-control"
-                        asp-items="@(new SelectList(ViewBag.Categories, "CategoryId", "CategoryName"))"></select>*@
-                </div>
+                    <div class="form-group col-md-6">
+                        <div class="field-label">Event Location</div>
+                        @Html.TextBoxFor(model => model.EventLocation, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.EventLocation, "", new { @class = "text-danger" })
 
-                <div class="form-group col-md-12 col-sm-12 col-xs-12">
-
-                    <div class="field-label">Event Description</div>
-                    <textarea id="eventDescription" placeholder="Description"></textarea>
-
-                </div>
-
-                <div class="column col-md-12 col-sm-12 col-xs-12 text-center">
-                    <div class="form-group">
-                        <button type="submit" class="theme-btn btn-style-one">Submit Now</button>
                     </div>
+                    <div class="form-group col-md-6">
+                        <div class="field-label">Event Start Date</div>
+                        @Html.TextBoxFor(model => model.EventDate, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.EventDate, "", new { @class = "text-danger" })
+
+                    </div>
+                    <div class="form-group col-md-6">
+                        <div class="field-label" style="width:40%;float:left;">Start Time</div>
+                        <div class="field-label" style="width:40%;float:right;">End Time</div>
+                        @Html.TextBoxFor(model => model.EventStartTime, new { @id = "eventStartTime", @class = "form-control", @style = "width:45%;float:left;" })
+                        @Html.ValidationMessageFor(model => model.EventStartTime, "", new { @class = "text-danger", @style = "width:45%;" })
+                        @Html.TextBoxFor(model => model.EventEndTime, new {@id = "eventEndTime", @class = "form-control", @style = "width:45%;float:right;" })
+                        @Html.ValidationMessageFor(model => model.EventEndTime, "", new { @class = "text-danger", @style = "width:45%;" })
+
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <div class="field-label">Event Image</div>
+                        <div class="editor-field">
+
+                            @Html.TextBoxFor(model => model.FileAttach, "", new { type = "file" })
+                            @*<input asp-for="Photo" name="Photo" id="eventImage">
+                                <span asp-validation-for="Photo" class="text-danger"></span>*@
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                        <div class="field-label">Event Category</div>
+                        @*<select asp-for="CategoryId" class="form-control"
+                            asp-items="@(new SelectList(ViewBag.Categories, "CategoryId", "CategoryName"))"></select>*@
+                    </div>
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+
+                        <div class="field-label">Event Description</div>
+                        <textarea id="eventDescription" placeholder="Description"></textarea>
+
+                    </div>
+
+                    <div class="column col-md-12 col-sm-12 col-xs-12 text-center">
+                        <div class="form-group">
+                            <button type="submit" class="theme-btn btn-style-one">Submit Now</button>
+                        </div>
+                    </div>
+
                 </div>
-
-
             </div>
             <!--End Contact Form-->
 
         </div>
     </section>
 
+
 }
 
-@*<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.js"></script>*@
-<script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
 
-<script type="text/javascript">
+@section Scripts
+    {
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
 
-    $("#EventDate").datepicker();
+    <script type="text/javascript">
 
-    $('#eventStartDate').timepicker({
-        timeFormat: 'h:mm p',
-        interval: 60,
-        minTime: '8',
-        maxTime: '6:00pm',
-        defaultTime: '11',
-        startTime: '08:00',
-        dynamic: false,
-        dropdown: true,
-        scrollbar: true
-    });
-    $('#eventStartTime').timepicker({
-        timeFormat: 'h:mm p',
-        interval: 60,
-        minTime: '8',
-        maxTime: '6:00pm',
-        defaultTime: '11',
-        startTime: '08:00',
-        dynamic: false,
-        dropdown: true,
-        scrollbar: true
+        $("#EventDate").datepicker();
 
-    });
-    $('#eventEndTime').timepicker({
-        timeFormat: 'h:mm p',
-        interval: 60,
-        minTime: '8',
-        maxTime: '6:00pm',
-        defaultTime: '11',
-        startTime: '08:00',
-        dynamic: false,
-        dropdown: true,
-        scrollbar: true
+        $('#eventStartDate').timepicker({
+            timeFormat: 'h:mm p',
+            interval: 60,
+            minTime: '8',
+            maxTime: '6:00pm',
+            defaultTime: '11',
+            startTime: '08:00',
+            dynamic: false,
+            dropdown: true,
+            scrollbar: true
+        });
+        $('#eventStartTime').timepicker({
+            timeFormat: 'h:mm p',
+            interval: 60,
+            minTime: '8',
+            maxTime: '6:00pm',
+            defaultTime: '6:00 pm',
+            startTime: '08:00',
+            dynamic: false,
+            dropdown: true,
+            scrollbar: true
 
-    });
+        });
+        $('#eventEndTime').timepicker({
+            timeFormat: 'h:mm p',
+            interval: 60,
+            minTime: '8',
+            maxTime: '6:00pm',
+            defaultTime: '18:00',
+            startTime: '08:00',
+            dynamic: false,
+            dropdown: true,
+            scrollbar: true
 
-
-    //$('#eventEndDate').datetimepicker({
-    //    autoclose: true,
-    //    todayBtn: true,
-
-    //});
-
-    ClassicEditor
-        .create(document.querySelector('#eventDescription'))
-        .catch(error => {
-            console.error(error);
         });
 
 
+        //$('#eventEndDate').datetimepicker({
+        //    autoclose: true,
+        //    todayBtn: true,
 
-    $(document).ready(function () {
-        $('#eventImage').on('change', function () {
-            var fileName = $(this).val().split("\\").pop();
-            $(this).next("#eventImage").html(fileName);
+        //});
+
+        ClassicEditor
+            .create(document.querySelector('#eventDescription'))
+            .catch(error => {
+                console.error(error);
+            });
+
+
+
+        $(document).ready(function () {
+            $('#eventImage').on('change', function () {
+                var fileName = $(this).val().split("\\").pop();
+                $(this).next("#eventImage").html(fileName);
+            })
         })
-    })
-</script>
+    </script>
 
 
 
+}

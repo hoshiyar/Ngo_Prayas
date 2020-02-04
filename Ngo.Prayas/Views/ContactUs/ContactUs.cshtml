@@ -107,23 +107,22 @@
     </section>
     <!--End Contact Section-->
     <!--Map Section-->
- 
+
 
 }
 
 
-<script type="text/javascript">
+@section Scripts
+{
     $(document).ready(function () {
 
-        alert("Hi");
-        var uluru = { lat: 28.5599188, lng: 77.0667192 };
-        // The map, centered at Uluru
-        var map = new google.maps.Map(
-            document.getElementById('divMap'), { zoom: 15, center: uluru });
-        // The marker, positioned at Uluru
-        var marker = new google.maps.Marker({ position: uluru, map: map });
+    alert("Hi");
+    var uluru = { lat: 28.5599188, lng: 77.0667192 };
+    // The map, centered at Uluru
+    var map = new google.maps.Map(
+    document.getElementById('divMap'), { zoom: 15, center: uluru });
+    // The marker, positioned at Uluru
+    var marker = new google.maps.Marker({ position: uluru, map: map });
 
     });
-
-</script>
-
+}

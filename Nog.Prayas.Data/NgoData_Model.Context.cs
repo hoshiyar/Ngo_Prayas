@@ -13,10 +13,10 @@ namespace Nog.Prayas.Data
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Ngo_Prayas_DBEntities1 : DbContext
+    public partial class Ngo_Prayas_DBEntities : DbContext
     {
-        public Ngo_Prayas_DBEntities1()
-            : base("name=Ngo_Prayas_DBEntities1")
+        public Ngo_Prayas_DBEntities()
+            : base("name=Ngo_Prayas_DBEntities")
         {
         }
     

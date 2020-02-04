@@ -54,48 +54,48 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContactU.cs">
-      <DependentUpon>NgoDataModel.tt</DependentUpon>
+      <DependentUpon>NgoData_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Event.cs">
-      <DependentUpon>NgoDataModel.tt</DependentUpon>
+      <DependentUpon>NgoData_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="EventCategory.cs">
-      <DependentUpon>NgoDataModel.tt</DependentUpon>
+      <DependentUpon>NgoData_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Event_Gallery.cs">
-      <DependentUpon>NgoDataModel.tt</DependentUpon>
+      <DependentUpon>NgoData_Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="NgoDataModel.Context.cs">
+    <Compile Include="NgoData_Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NgoDataModel.Context.tt</DependentUpon>
+      <DependentUpon>NgoData_Model.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="NgoDataModel.cs">
+    <Compile Include="NgoData_Model.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NgoDataModel.tt</DependentUpon>
+      <DependentUpon>NgoData_Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="NgoDataModel.Designer.cs">
+    <Compile Include="NgoData_Model.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NgoDataModel.edmx</DependentUpon>
+      <DependentUpon>NgoData_Model.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Role.cs">
-      <DependentUpon>NgoDataModel.tt</DependentUpon>
+      <DependentUpon>NgoData_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>NgoDataModel.tt</DependentUpon>
+      <DependentUpon>NgoData_Model.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="NgoDataModel.edmx">
+    <EntityDeploy Include="NgoData_Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>NgoDataModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>NgoData_Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="NgoDataModel.edmx.diagram">
-      <DependentUpon>NgoDataModel.edmx</DependentUpon>
+    <None Include="NgoData_Model.edmx.diagram">
+      <DependentUpon>NgoData_Model.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -103,15 +103,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="NgoDataModel.Context.tt">
+    <Content Include="NgoData_Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NgoDataModel.edmx</DependentUpon>
-      <LastGenOutput>NgoDataModel.Context.cs</LastGenOutput>
+      <DependentUpon>NgoData_Model.edmx</DependentUpon>
+      <LastGenOutput>NgoData_Model.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="NgoDataModel.tt">
+    <Content Include="NgoData_Model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NgoDataModel.edmx</DependentUpon>
-      <LastGenOutput>NgoDataModel.cs</LastGenOutput>
+      <DependentUpon>NgoData_Model.edmx</DependentUpon>
+      <LastGenOutput>NgoData_Model.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
