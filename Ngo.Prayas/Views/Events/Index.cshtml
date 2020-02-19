@@ -1,4 +1,4 @@
-﻿
+﻿@model Ngo.Prayas.ViewModels.EventViewModel
 @{
     ViewData["Title"] = "Index";
 }
@@ -31,12 +31,12 @@
                         <div class="inner">
                             <div class="image-box">
                                 <div class="image">
-                                    <img src="~/StaticFiles/images/resource/event-2.jpg" alt="" />
+                                    <img src="~/UploadedFiles/ + @Model.ImageUrl" alt="" />
                                     <div class="overlay-box">
                                         <div class="overlay-inner">
                                             <div class="content">
                                                 <!--Countdown Timer-->
-                                                <div class="time-counter style-two"><div class="time-countdown clearfix" data-countdown="2017/7/14"></div></div>
+                                                <div class="time-counter style-two"><div class="time-countdown clearfix" data-countdown="@Model.EventDate"></div></div>
                                             </div>
                                         </div>
                                     </div>

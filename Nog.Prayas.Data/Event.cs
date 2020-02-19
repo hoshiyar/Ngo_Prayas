@@ -14,6 +14,12 @@ namespace Nog.Prayas.Data
     
     public partial class Event
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Event()
+        {
+            this.Event_Gallery = new HashSet<Event_Gallery>();
+        }
+    
         public int Id { get; set; }
         public string EventName { get; set; }
         public string EventDescription { get; set; }
@@ -26,7 +32,8 @@ namespace Nog.Prayas.Data
         public bool IsActive { get; set; }
         public string EventLocation { get; set; }
     
-        public virtual Event_Gallery Event_Gallery { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Event_Gallery> Event_Gallery { get; set; }
         public virtual EventCategory EventCategory { get; set; }
     }
 }

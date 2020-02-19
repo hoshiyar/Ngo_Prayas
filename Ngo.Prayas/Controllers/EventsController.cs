@@ -21,6 +21,7 @@ namespace Ngo.Prayas.Controllers
         // GET: Events
         public ActionResult Index()
         {
+            
             return View();
         }
 
@@ -33,19 +34,20 @@ namespace Ngo.Prayas.Controllers
         [HttpPost]
         public ActionResult Create(EventViewModel model)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return View(model);
             }
 
             string fileName = string.Empty;
-           if( model.FileAttach.ContentLength > 0)
+            if (model.FileAttach.ContentLength > 0)
             {
 
-                fileName = System.IO.Path.GetFileName(model.FileAttach.FileName) + "_" + Guid.NewGuid();
+                fileName = Guid.NewGuid() + "_" + System.IO.Path.GetFileName(model.FileAttach.FileName);
                 string _path = System.IO.Path.Combine(Server.MapPath("~/UploadedFiles"), fileName);
                 model.FileAttach.SaveAs(_path);
             }
+
 
             Nog.Prayas.Data.Event events = new Nog.Prayas.Data.Event
             {
@@ -59,6 +61,7 @@ namespace Ngo.Prayas.Controllers
             };
 
             Nog.Prayas.Data.Event eventAdded = _eventRepo.Create(events);
+            _eventRepo.SaveChanges();
 
             Nog.Prayas.Data.Event_Gallery eventGallery = new Nog.Prayas.Data.Event_Gallery
             {
@@ -71,6 +74,7 @@ namespace Ngo.Prayas.Controllers
             };
 
             _eventRepo.AddEventImages(eventGallery);
+            _eventRepo.SaveChanges();
 
             return View();
         }
@@ -79,8 +83,8 @@ namespace Ngo.Prayas.Controllers
         private List<EventCategory> GetCategories()
         {
             List<EventCategory> categories = new List<EventCategory>();
-            //categories = _eventRepo.GetCategories().ToList();
-            //categories.Insert(0, new EventCategory { CategoryId = 0, CategoryName = "Select" });
+            categories = _eventRepo.GetCategories().ToList();
+            categories.Insert(0, new EventCategory { CategoryId = 0, CategoryName = "Select" });
             return categories;
         }
     }

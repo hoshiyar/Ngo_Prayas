@@ -18,9 +18,13 @@ namespace Ngo.Prayas.Repositories
 
         //IEnumerable<EventCategory> IEventsRepository.Categories { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public IEnumerable<Event> GetCategories()
+        public IEnumerable<Models.EventCategory> GetCategories()
         {
-            return _dbContext.Events.ToList();
+            return _dbContext.EventCategories.Select(category => new Models.EventCategory()
+            {
+                CategoryId = category.CategoryId,
+                CategoryName = category.CategoryName
+            }).ToList();
         }
 
         public Event Create(Event eventModel)
@@ -51,6 +55,7 @@ namespace Ngo.Prayas.Repositories
         public void AddEventImages(Event_Gallery eventGallery)
         {
             _dbContext.Event_Gallery.Add(eventGallery);
+            
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Nog.Prayas.Data
     {
         public int Id { get; set; }
         public string ImageName { get; set; }
-        public Nullable<int> EventId { get; set; }
+        public int EventId { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }
         public Nullable<bool> IsActive { get; set; }

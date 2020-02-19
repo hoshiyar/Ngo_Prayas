@@ -32,7 +32,7 @@ warning 6002: The table/view 'Ngo_Prayas_DB.dbo.ContactUs' does not have a prima
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ImageName" Type="varchar" MaxLength="1000" Nullable="false" />
-          <Property Name="EventId" Type="int" />
+          <Property Name="EventId" Type="int" Nullable="false" />
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="IsActive" Type="bit" />
@@ -106,13 +106,13 @@ warning 6002: The table/view 'Ngo_Prayas_DB.dbo.ContactUs' does not have a prima
         </Association>
         <Association Name="FK_Event_Gallery_Events">
           <End Role="Events" Type="Self.Events" Multiplicity="1" />
-          <End Role="Event_Gallery" Type="Self.Event_Gallery" Multiplicity="0..1" />
+          <End Role="Event_Gallery" Type="Self.Event_Gallery" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Events">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Event_Gallery">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="EventId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -158,7 +158,7 @@ warning 6002: The table/view 'Ngo_Prayas_DB.dbo.ContactUs' does not have a prima
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ImageName" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="EventId" Type="Int32" />
+          <Property Name="EventId" Type="Int32" Nullable="false" />
           <Property Name="CreatedDate" Type="DateTime" Precision="3" />
           <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
           <Property Name="IsActive" Type="Boolean" />
@@ -233,13 +233,13 @@ warning 6002: The table/view 'Ngo_Prayas_DB.dbo.ContactUs' does not have a prima
         </EntityType>
         <Association Name="FK_Event_Gallery_Events">
           <End Role="Events" Type="Self.Event" Multiplicity="1" />
-          <End Role="Event_Gallery" Type="Self.Event_Gallery" Multiplicity="0..1" />
+          <End Role="Event_Gallery" Type="Self.Event_Gallery" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Events">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Event_Gallery">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="EventId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>

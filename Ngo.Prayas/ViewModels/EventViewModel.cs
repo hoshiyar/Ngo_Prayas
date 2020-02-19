@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace Ngo.Prayas.ViewModels
 {
@@ -11,6 +12,7 @@ namespace Ngo.Prayas.ViewModels
         public int Id { get; set; }
         public string EventName { get; set; }
 
+        [AllowHtml]
         public string EventDescription { get; set; }
 
         public DateTime EventDate { get; set; }
