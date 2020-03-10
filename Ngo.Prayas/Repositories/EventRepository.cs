@@ -1,4 +1,5 @@
 ﻿using Ngo.Prayas.Models;
+using Ngo.Prayas.ViewModels;
 using Nog.Prayas.Data;
 using System;
 using System.Collections.Generic;
@@ -35,9 +36,32 @@ namespace Ngo.Prayas.Repositories
             return upcomingEvents;
         }
 
-        public IEnumerable<Event> GetAllEvents()
+        public IEnumerable<EventViewModel> GetAllEvents()
         {
-            return _dbContext.Events.ToList();
+            try
+            {
+                return _dbContext.Events.Select(m => new EventViewModel()
+                {
+                    CategoryId = m.CategoryId.Value,
+                    EventDate = m.EventDate,
+                    EventDescription = m.EventDescription,
+                    EventEndTime = m.EventEndTime,
+                    EventLocation = m.EventLocation,
+                    EventName = m.EventName,
+                    EventStartTime = m.EventStartTime,
+                    Id = m.Id,
+                    ImageUrl = _dbContext.Event_Gallery.FirstOrDefault(e => e.IsActive == true && e.IsBaseImage.Value == true).ImageName.ToString(),
+                    //EventCategories = _dbContext.EventCategories.Select(cat => new Models.EventCategory() {
+                    //    CategoryName = cat.CategoryName
+                    //    }).ToList(),
+
+                
+                }).ToList();
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public Event GetEvents(int id)

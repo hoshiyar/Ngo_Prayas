@@ -1,4 +1,5 @@
 ﻿using Ngo.Prayas.Models;
+using Ngo.Prayas.ViewModels;
 using Nog.Prayas.Data;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace Ngo.Prayas.Repositories
     {
         Event Create(Event events);
 
-        IEnumerable<Event> GetAllEvents();
+        IEnumerable<EventViewModel> GetAllEvents();
 
         Event GetEvents(int id);
 
@@ -21,5 +22,6 @@ namespace Ngo.Prayas.Repositories
         IEnumerable<Models.EventCategory> GetCategories();
 
         void AddEventImages(Event_Gallery eventGallery);
+
     }
 }

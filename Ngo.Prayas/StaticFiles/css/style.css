@@ -641,7 +641,7 @@ img{
 	position:relative;
 	display:inline-block;
 	float:left;
-	padding:25px 0px;
+	padding:15px 0px;
 	margin-left:30px;
 }
 
@@ -1203,7 +1203,7 @@ img{
 
 .sec-title{
 	position:relative;
-	margin-bottom:50px;
+	margin-bottom:30px;
 	text-align:center;
 }
 
@@ -1358,7 +1358,7 @@ img{
 
 .donate-section{
 	position:relative;
-	padding-top:120px;
+	padding-top:35px;
 	background-color:#fafafa;
 }
 
@@ -1368,7 +1368,7 @@ img{
 
 .donate-section .content-column{
 	position:relative;
-	padding-bottom:120px;
+	padding-bottom:40px;
 }
 
 .donate-section .content-column .inner-box{
@@ -1517,7 +1517,7 @@ img{
 
 .counter-section{
 	position:relative;
-	padding:90px 0px 50px;
+	padding:15px 0px 50px;
 	background-attachment:fixed;
 	background-repeat:no-repeat;
 	background-size:cover;
@@ -1631,7 +1631,7 @@ img{
 
 .latest-causes-section{
 	position:relative;
-	padding:110px 0px 70px;
+	padding:35px 0px 70px;
 }
 
 .sec-title.margin-bottom{
@@ -1831,7 +1831,7 @@ img{
 
 .donation-section{
 	position:relative;
-	padding:110px 0px 95px;
+	padding:30px 0px 30px;
 	background-attachment:fixed;
 	background-repeat:no-repeat;
 	background-size:cover;
@@ -2087,7 +2087,7 @@ img{
 
 .gallery-section{
 	position:relative;
-	padding:110px 0px 130px;
+	padding:35px 0px 130px;
 }
 
 .default-portfolio-item{
@@ -2213,7 +2213,7 @@ img{
 
 .testimonial-section{
 	position:relative;
-	padding:115px 0px 110px;
+	padding:35px 0px 110px;
 	background-attachment:fixed;
 	background-position:center top;
 	background-repeat:no-repeat;
@@ -3217,7 +3217,7 @@ img{
 
 .main-footer .footer-bottom{
 	position:relative;
-	padding:25px 0px;
+	padding:15px 0px;
 	margin-top:50px;
 	background-color:#161616;
 }
@@ -3303,7 +3303,7 @@ img{
 
 .about-us-section{
 	position:relative;
-	padding:110px 0px 120px;
+	padding:0px 0px 0px;
 }
 
 .about-us-section .image-column{
@@ -3410,7 +3410,7 @@ img{
 
 .event-section{
 	position:relative;
-	padding:110px 0px 120px;
+	padding:35px 0px 120px;
 	background-color:#fafafa;
 }
 
@@ -3793,16 +3793,16 @@ img{
 
 .volunteers-section{
 	position:relative;
-	padding:110px 0px 10px;
+	padding:15px 0px 10px;
 }
 
 .volunteers-section .sec-title{
-	margin-bottom:100px;
+	margin-bottom:35px;
 }
 
 .volunteer-member{
 	position:relative;
-	margin-bottom:90px;	
+	margin-bottom:35px;	
 }
 
 .volunteer-member .inner-box{
@@ -3934,7 +3934,7 @@ img{
 
 .history-section{
 	position:relative;
-	padding:110px 0px 80px;
+	padding:35px 0px 80px;
 }
 
 /*Video Box*/
@@ -4065,7 +4065,7 @@ img{
 
 .we-do-section{
 	position:relative;
-	padding:110px 0px 120px;
+	padding:35px 0px 120px;
 	background-size:cover;
 	background-attachment:fixed;
 	background-repeat:no-repeat;
@@ -4541,7 +4541,7 @@ img{
  
 .page-title{
 	position:relative;
-	padding:25px 120px;
+	padding:0px 120px;
 	text-align:center;
 	background-size:cover;
 	background-attachment:fixed;
@@ -6270,7 +6270,7 @@ img{
 
 .donate-now{
 	position:relative;
-	padding:120px 0px 70px;
+	padding:10px 0px 0px;
 }
 
 .default-title{

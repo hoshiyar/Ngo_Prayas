@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ngo.Prayas.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -24,8 +25,6 @@ namespace Ngo.Prayas.ViewModels
 
         public string EventLocation { get; set; }
 
-        // public IFormFile Photo { get; set; }
-
         [Required]
         [Display(Name = "Upload File")]
         public HttpPostedFileBase FileAttach { get; set; }
@@ -36,6 +35,7 @@ namespace Ngo.Prayas.ViewModels
 
         //    public List<EventCategory> Categories { get; set; }
 
+        public List<EventCategory> EventCategories { get; set; }
 
         public DateTime CreatedDate { get; set; }
 
@@ -43,4 +43,5 @@ namespace Ngo.Prayas.ViewModels
 
         public bool IsActive { get; set; }
     }
+
 }

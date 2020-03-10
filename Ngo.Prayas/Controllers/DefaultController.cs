@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ngo.Prayas.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,6 +15,17 @@ namespace Ngo.Prayas.Controllers
             return View();
         }
 
+
+        [HttpPost]
+
+        public ActionResult PostVolunteerData(VolunteerApplicationVM volunteerApplication)
+        {
+            if(ModelState.IsValid)
+            {
+                return Json("success", JsonRequestBehavior.AllowGet);
+            }
+            return View("Home");
+        }
 
         public ActionResult AboutUs()
         {

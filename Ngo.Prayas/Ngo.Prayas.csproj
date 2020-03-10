@@ -204,7 +204,10 @@
     <Content Include="StaticFiles\images\logo-4.png" />
     <Content Include="StaticFiles\images\logo-small.png" />
     <Content Include="StaticFiles\images\logo.png" />
+    <Content Include="StaticFiles\images\P-01.png" />
+    <Content Include="StaticFiles\images\P_Small_Logo.png" />
     <Content Include="StaticFiles\images\resource\about-1.png" />
+    <Content Include="StaticFiles\images\resource\about_2.png" />
     <Content Include="StaticFiles\images\resource\author-1.jpg" />
     <Content Include="StaticFiles\images\resource\author-2.jpg" />
     <Content Include="StaticFiles\images\resource\author-3.jpg" />
@@ -226,6 +229,7 @@
     <Content Include="StaticFiles\images\resource\featured-image-6.jpg" />
     <Content Include="StaticFiles\images\resource\featured-image-7.jpg" />
     <Content Include="StaticFiles\images\resource\founder.jpg" />
+    <Content Include="StaticFiles\images\resource\founder_img1.JPG" />
     <Content Include="StaticFiles\images\resource\image-1.jpg" />
     <Content Include="StaticFiles\images\resource\news-1.jpg" />
     <Content Include="StaticFiles\images\resource\news-10.jpg" />
@@ -262,6 +266,7 @@
     <Content Include="StaticFiles\images\resource\volunteer-image-1.png" />
     <Content Include="StaticFiles\images\resource\volunteer-image-2.png" />
     <Content Include="StaticFiles\images\resource\volunteer-image-3.png" />
+    <Content Include="StaticFiles\images\resource\volunteer\pooja_volunteer.jpg" />
     <Content Include="StaticFiles\images\smallLogo %282%29.png" />
     <Content Include="StaticFiles\images\smallLogo.png" />
     <Content Include="StaticFiles\images\sponsors\1.png" />
@@ -333,6 +338,7 @@
     <Compile Include="ViewModels\EventViewModel.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
+    <Compile Include="ViewModels\VolunteerApplicationVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

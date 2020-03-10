@@ -21,8 +21,9 @@ namespace Ngo.Prayas.Controllers
         // GET: Events
         public ActionResult Index()
         {
-            
-            return View();
+            List<EventViewModel> listOfEvents = _eventRepo.GetAllEvents().ToList();
+            ViewBag.Categories = GetCategories();
+            return View(listOfEvents);
         }
 
         public ActionResult Create()

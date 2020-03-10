@@ -30,20 +30,20 @@
                         <!--Top Left-->
                         <div class="top-left top-links">
                             <ul class="clearfix">
-                                <li><span class="icon fa fa-phone"></span> <a href="#">1800 123 4567 - 1800 123 4568</a></li>
+                                @*<li><span class="icon fa fa-phone"></span> <a href="#">1800 123 4567 - 1800 123 4568</a></li>*@
                                 <li><span class="icon fa fa-envelope-o"></span> <a href="#">info@ngoprayas.com</a></li>
                             </ul>
                         </div>
 
                         <!--Top Right-->
-                        <div class="top-right">
-                            <div class="social-icon">
-                                @Html.ActionLink("Login", "Login", "Account")
+                        <div class="top-right top-links" style="margin-bottom:0px;">
+                            <ul class="clearfix">
+                                <li>@Html.ActionLink("Login", "Login", "Account")</li>
                                 @*<a href="#"><span class="fa fa-twitter"></span></a>
                                     <a href="#"><span class="fa fa-google-plus"></span></a>
                                     <a href="#"><span class="fa fa-youtube"></span></a>
                                     <a href="#"><span class="fa fa-instagram"></span></a>*@
-                            </div>
+                            </ul>
                         </div>
 
                     </div>
@@ -58,7 +58,7 @@
                         <div class="outer-container clearfix">
                             <!--Logo Box-->
                             <div class="logo-box">
-                                <div class="logo"><a href="index.html"><img src="~/staticFiles/images/smallLogo (2).png" alt=""></a></div>
+                                <div class="logo"><a href="index.html"><img width="99px" height="99px" src="~/staticFiles/images/P_Small_Logo.png" alt=""></a></div>
                             </div>
 
                             <!--Nav Outer-->
@@ -135,7 +135,8 @@
                                 </nav><!-- Main Menu End-->
                                 <!--Donate Button-->
                                 <div class="don-btn-outer">
-                                    @Html.ActionLink("Donation", "Index", "Donation", new { @class = "theme-btn donate-btn" })
+                                    @*@Html.ActionLink("Donation", "Index", "Donation", new { @class = "theme-btn donate-btn" })*@
+                                    <a href="/Donation/Index" class="theme-btn donate-btn">Donation</a>
                                     @*<a asp-controller="Donation" asp-action="Index" class="theme-btn donate-btn">Donation</a>*@
                                 </div>
 
@@ -162,15 +163,6 @@
                     <div class="row clearfix">
                         <div class="column col-md-6 col-sm-6 col-xs-12">
                             <div class="copyright">&copy; 2020 Prayas Ngo - All Rights Reserved</div>
-                        </div>
-                        <div class="column col-md-6 col-sm-6 col-xs-12">
-                            <div class="footer-icon">
-                                <a href="#"><span class="fa fa-facebook"></span></a>
-                                <a href="#"><span class="fa fa-twitter"></span></a>
-                                <a href="#"><span class="fa fa-google-plus"></span></a>
-                                <a href="#"><span class="fa fa-instagram"></span></a>
-                                <a href="#"><span class="fa fa-youtube"></span></a>
-                            </div>
                         </div>
                     </div>
                 </div>
