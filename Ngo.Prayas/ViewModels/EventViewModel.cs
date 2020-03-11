@@ -16,7 +16,9 @@ namespace Ngo.Prayas.ViewModels
         [AllowHtml]
         public string EventDescription { get; set; }
 
-        public DateTime EventDate { get; set; }
+        [Required]
+
+        public string EventDate { get; set; }
 
         public string EventStartTime { get; set; }
 

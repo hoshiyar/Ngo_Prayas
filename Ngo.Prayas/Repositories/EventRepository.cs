@@ -3,6 +3,8 @@ using Ngo.Prayas.ViewModels;
 using Nog.Prayas.Data;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.SqlServer;
 using System.Linq;
 using System.Web;
 
@@ -43,7 +45,7 @@ namespace Ngo.Prayas.Repositories
                 return _dbContext.Events.Select(m => new EventViewModel()
                 {
                     CategoryId = m.CategoryId.Value,
-                    EventDate = m.EventDate,
+                    EventDate = m.EventDate.ToString(),
                     EventDescription = m.EventDescription,
                     EventEndTime = m.EventEndTime,
                     EventLocation = m.EventLocation,

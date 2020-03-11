@@ -34,7 +34,7 @@
                             <div class="inner">
                                 <div class="image-box">
                                     <div class="image">
-                                        <img src="~/UploadedFiles/ + @eveents.ImageUrl" alt="" />
+                                        <img src="~/UploadedFiles/@eveents.ImageUrl" alt="" />
                                         <div class="overlay-box">
                                             <div class="overlay-inner">
                                                 <div class="content">
@@ -47,7 +47,7 @@
                                 </div>
                                 <!--Lower Content-->
                                 <div class="lower-content">
-                                    <div class="posted-date">12 <span>Jan</span></div>
+                                    <div class="posted-date">@Convert.ToDateTime(eveents.EventDate).ToString("dd") <span>@Convert.ToDateTime(eveents.EventDate).ToString("MMM")</span></div>
                                     <ul class="post-meta">
                                         <li><a href="event-single.html"><span class="icon fa fa-clock-o"></span>@eveents.EventStartTime - @eveents.EventEndTime</a></li>
                                         <li><a href="event-single.html"><span class="icon fa fa-map-marker"></span> @eveents.EventLocation</a></li>

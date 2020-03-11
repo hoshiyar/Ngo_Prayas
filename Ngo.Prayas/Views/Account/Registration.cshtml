@@ -5,8 +5,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Registration</h2>
-
 @using (Html.BeginForm("Registration", "Account", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
@@ -57,7 +55,7 @@
                             <span asp-validation-for="Password" class="text-danger"></span>*@
                     </div>
                     <div class="form-group" style="float:right;">
-                        <button type="submit" class="btn btn-default">Registration</button>
+                        <button type="submit" class="btn theme-btn btn-default">Registration</button>
                     </div>
                 </form>
             </div>

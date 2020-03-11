@@ -49,6 +49,7 @@ namespace Ngo.Prayas.Controllers
                 model.FileAttach.SaveAs(_path);
             }
 
+            DateTime parseDate = DateTime.ParseExact(model.EventDate, "MM/dd/yyyy", null);
 
             Nog.Prayas.Data.Event events = new Nog.Prayas.Data.Event
             {
@@ -57,7 +58,7 @@ namespace Ngo.Prayas.Controllers
                 EventEndTime = model.EventEndTime,
                 EventLocation = model.EventLocation,
                 EventDescription = model.EventDescription,
-                EventDate = model.EventDate,
+                EventDate = DateTime.ParseExact(model.EventDate, "MM/dd/yyyy", null),
                 CategoryId = model.CategoryId
             };
 
@@ -77,7 +78,7 @@ namespace Ngo.Prayas.Controllers
             _eventRepo.AddEventImages(eventGallery);
             _eventRepo.SaveChanges();
 
-            return View();
+            return View("Index");
         }
 
 
@@ -87,6 +88,12 @@ namespace Ngo.Prayas.Controllers
             categories = _eventRepo.GetCategories().ToList();
             categories.Insert(0, new EventCategory { CategoryId = 0, CategoryName = "Select" });
             return categories;
+        }
+
+        [HttpGet]
+        public ActionResult EventGalleries()
+        {
+            return View();
         }
     }
 }
