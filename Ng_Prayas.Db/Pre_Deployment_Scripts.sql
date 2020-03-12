@@ -1,56 +1,53 @@
 ﻿USE [Ngo_Prayas_DB]
 GO
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Users]') AND type in (N'U'))
-ALTER TABLE [dbo].[Users] DROP CONSTRAINT IF EXISTS [FK__Users__RoleId__5629CD9C]
+ALTER TABLE [dbo].[Users] DROP CONSTRAINT IF EXISTS [FK__Users__RoleId__398D8EEE]
 GO
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Events]') AND type in (N'U'))
 ALTER TABLE [dbo].[Events] DROP CONSTRAINT IF EXISTS [FK__Events__Category__3F466844]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Event_Gallery_Images]') AND type in (N'U'))
-ALTER TABLE [dbo].[Event_Gallery_Images] DROP CONSTRAINT IF EXISTS [FK_Event_Gallery_Images_Event_Gallery_Images]
-GO
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Event_Gallery]') AND type in (N'U'))
 ALTER TABLE [dbo].[Event_Gallery] DROP CONSTRAINT IF EXISTS [FK_Event_Gallery_Events]
 GO
-/****** Object:  Table [dbo].[Volunteers_Application]    Script Date: 12-03-2020 14:09:05 ******/
+/****** Object:  Table [dbo].[Volunteers_Application]    Script Date: 3/12/2020 11:10:37 PM ******/
 DROP TABLE IF EXISTS [dbo].[Volunteers_Application]
 GO
-/****** Object:  Table [dbo].[Users]    Script Date: 12-03-2020 14:09:05 ******/
+/****** Object:  Table [dbo].[Users]    Script Date: 3/12/2020 11:10:37 PM ******/
 DROP TABLE IF EXISTS [dbo].[Users]
 GO
-/****** Object:  Table [dbo].[Roles]    Script Date: 12-03-2020 14:09:05 ******/
+/****** Object:  Table [dbo].[Roles]    Script Date: 3/12/2020 11:10:37 PM ******/
 DROP TABLE IF EXISTS [dbo].[Roles]
 GO
-/****** Object:  Table [dbo].[Events]    Script Date: 12-03-2020 14:09:05 ******/
+/****** Object:  Table [dbo].[Events]    Script Date: 3/12/2020 11:10:37 PM ******/
 DROP TABLE IF EXISTS [dbo].[Events]
 GO
-/****** Object:  Table [dbo].[EventCategories]    Script Date: 12-03-2020 14:09:05 ******/
+/****** Object:  Table [dbo].[EventCategories]    Script Date: 3/12/2020 11:10:37 PM ******/
 DROP TABLE IF EXISTS [dbo].[EventCategories]
 GO
-/****** Object:  Table [dbo].[Event_GalleryDetail]    Script Date: 12-03-2020 14:09:05 ******/
+/****** Object:  Table [dbo].[Event_GalleryDetail]    Script Date: 3/12/2020 11:10:37 PM ******/
 DROP TABLE IF EXISTS [dbo].[Event_GalleryDetail]
 GO
-/****** Object:  Table [dbo].[Event_Gallery_Images]    Script Date: 12-03-2020 14:09:05 ******/
+/****** Object:  Table [dbo].[Event_Gallery_Images]    Script Date: 3/12/2020 11:10:37 PM ******/
 DROP TABLE IF EXISTS [dbo].[Event_Gallery_Images]
 GO
-/****** Object:  Table [dbo].[Event_Gallery]    Script Date: 12-03-2020 14:09:05 ******/
+/****** Object:  Table [dbo].[Event_Gallery]    Script Date: 3/12/2020 11:10:37 PM ******/
 DROP TABLE IF EXISTS [dbo].[Event_Gallery]
 GO
-/****** Object:  Table [dbo].[ContactUs]    Script Date: 12-03-2020 14:09:05 ******/
+/****** Object:  Table [dbo].[ContactUs]    Script Date: 3/12/2020 11:10:37 PM ******/
 DROP TABLE IF EXISTS [dbo].[ContactUs]
 GO
 USE [master]
 GO
-/****** Object:  Database [Ngo_Prayas_DB]    Script Date: 12-03-2020 14:09:05 ******/
+/****** Object:  Database [Ngo_Prayas_DB]    Script Date: 3/12/2020 11:10:37 PM ******/
 DROP DATABASE IF EXISTS [Ngo_Prayas_DB]
 GO
-/****** Object:  Database [Ngo_Prayas_DB]    Script Date: 12-03-2020 14:09:05 ******/
+/****** Object:  Database [Ngo_Prayas_DB]    Script Date: 3/12/2020 11:10:37 PM ******/
 CREATE DATABASE [Ngo_Prayas_DB]
  CONTAINMENT = NONE
  ON  PRIMARY 
-( NAME = N'Ngo_Prayas_DB', FILENAME = N'C:\Program Files\Microsoft SQL Server1\MSSQL14.SQLEXPRESS\MSSQL\DATA\Ngo_Prayas_DB.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+( NAME = N'Ngo_Prayas_DB', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\Ngo_Prayas_DB.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
  LOG ON 
-( NAME = N'Ngo_Prayas_DB_log', FILENAME = N'C:\Program Files\Microsoft SQL Server1\MSSQL14.SQLEXPRESS\MSSQL\DATA\Ngo_Prayas_DB_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+( NAME = N'Ngo_Prayas_DB_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\Ngo_Prayas_DB_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
 GO
 ALTER DATABASE [Ngo_Prayas_DB] SET COMPATIBILITY_LEVEL = 140
 GO
@@ -117,11 +114,13 @@ ALTER DATABASE [Ngo_Prayas_DB] SET TARGET_RECOVERY_TIME = 60 SECONDS
 GO
 ALTER DATABASE [Ngo_Prayas_DB] SET DELAYED_DURABILITY = DISABLED 
 GO
+EXEC sys.sp_db_vardecimal_storage_format N'Ngo_Prayas_DB', N'ON'
+GO
 ALTER DATABASE [Ngo_Prayas_DB] SET QUERY_STORE = OFF
 GO
 USE [Ngo_Prayas_DB]
 GO
-/****** Object:  Table [dbo].[ContactUs]    Script Date: 12-03-2020 14:09:05 ******/
+/****** Object:  Table [dbo].[ContactUs]    Script Date: 3/12/2020 11:10:37 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -137,7 +136,7 @@ CREATE TABLE [dbo].[ContactUs](
 	[ModifiedDate] [datetime2](7) NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Event_Gallery]    Script Date: 12-03-2020 14:09:05 ******/
+/****** Object:  Table [dbo].[Event_Gallery]    Script Date: 3/12/2020 11:10:37 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -156,7 +155,7 @@ CREATE TABLE [dbo].[Event_Gallery](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Event_Gallery_Images]    Script Date: 12-03-2020 14:09:05 ******/
+/****** Object:  Table [dbo].[Event_Gallery_Images]    Script Date: 3/12/2020 11:10:37 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -171,7 +170,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Event_GalleryDetail]    Script Date: 12-03-2020 14:09:05 ******/
+/****** Object:  Table [dbo].[Event_GalleryDetail]    Script Date: 3/12/2020 11:10:37 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -187,7 +186,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[EventCategories]    Script Date: 12-03-2020 14:09:05 ******/
+/****** Object:  Table [dbo].[EventCategories]    Script Date: 3/12/2020 11:10:37 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -201,7 +200,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Events]    Script Date: 12-03-2020 14:09:05 ******/
+/****** Object:  Table [dbo].[Events]    Script Date: 3/12/2020 11:10:37 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -224,7 +223,7 @@ CREATE TABLE [dbo].[Events](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Roles]    Script Date: 12-03-2020 14:09:05 ******/
+/****** Object:  Table [dbo].[Roles]    Script Date: 3/12/2020 11:10:37 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -239,7 +238,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Users]    Script Date: 12-03-2020 14:09:05 ******/
+/****** Object:  Table [dbo].[Users]    Script Date: 3/12/2020 11:10:37 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -257,7 +256,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Volunteers_Application]    Script Date: 12-03-2020 14:09:05 ******/
+/****** Object:  Table [dbo].[Volunteers_Application]    Script Date: 3/12/2020 11:10:37 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -278,11 +277,6 @@ ALTER TABLE [dbo].[Event_Gallery]  WITH CHECK ADD  CONSTRAINT [FK_Event_Gallery_
 REFERENCES [dbo].[Events] ([Id])
 GO
 ALTER TABLE [dbo].[Event_Gallery] CHECK CONSTRAINT [FK_Event_Gallery_Events]
-GO
-ALTER TABLE [dbo].[Event_Gallery_Images]  WITH CHECK ADD  CONSTRAINT [FK_Event_Gallery_Images_Event_Gallery_Images] FOREIGN KEY([DetailGalleryId])
-REFERENCES [dbo].[Event_GalleryDetail] ([Id])
-GO
-ALTER TABLE [dbo].[Event_Gallery_Images] CHECK CONSTRAINT [FK_Event_Gallery_Images_Event_Gallery_Images]
 GO
 ALTER TABLE [dbo].[Events]  WITH CHECK ADD  CONSTRAINT [FK__Events__Category__3F466844] FOREIGN KEY([CategoryId])
 REFERENCES [dbo].[EventCategories] ([CategoryId])
