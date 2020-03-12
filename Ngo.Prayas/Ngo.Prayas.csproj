@@ -377,6 +377,8 @@
     <Content Include="Views\ContactUs\Contacts.cshtml" />
     <Content Include="Views\Events\Index.cshtml" />
     <Content Include="Views\Events\Create.cshtml" />
+    <Content Include="Views\Events\SubmitGallery.cshtml" />
+    <Content Include="Views\Events\EventGalleries.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

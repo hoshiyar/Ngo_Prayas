@@ -10,9 +10,9 @@ namespace Ngo.Prayas.Repositories
 {
     public class ContactUsRepository : IContactUsRepository
     {
-        private Ngo_Prayas_DBEntities _dBEntities;
+        private Ngo_Prayas_DBEntities1 _dBEntities;
 
-        public ContactUsRepository(Ngo_Prayas_DBEntities dBEntities)
+        public ContactUsRepository(Ngo_Prayas_DBEntities1 dBEntities)
         {
             _dBEntities = dBEntities;
         }

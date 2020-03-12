@@ -96,26 +96,50 @@ namespace Ngo.Prayas.Controllers
             return View();
         }
 
+
+        [HttpGet]
+        public ActionResult SubmitGallery()
+        {
+            return View();
+        }
+
         [HttpPost]
         public ActionResult SubmitGallery(EventGalleryVM eventGalleryVM)
         {
             if (!ModelState.IsValid)
             {
 
-                return View("EventGalleries");
+                return View(eventGalleryVM);
             }
 
-            foreach (HttpPostedFileBase file in eventGalleryVM.Files)
+            if (eventGalleryVM.Files.Count() > 0)
             {
-                string fileName = string.Empty;
-                if (file != null && file.ContentLength > 0)
-                {
+                eventGalleryVM.Id = _eventRepo.InsertEventGallery(eventGalleryVM);
+                _eventRepo.SaveChanges();
 
-                    fileName = Guid.NewGuid() + "_" + System.IO.Path.GetFileName(file.FileName);
-                    string _path = System.IO.Path.Combine(Server.MapPath("~/EventGalleryImages"), fileName);
-                    file.SaveAs(_path);
-                }
             }
+            if (eventGalleryVM.Id > 0)
+            {
+                foreach (HttpPostedFileBase file in eventGalleryVM.Files)
+                {
+                    string fileName = string.Empty;
+                    if (file != null && file.ContentLength > 0)
+                    {
+
+                        fileName = Guid.NewGuid() + "_" + System.IO.Path.GetFileName(file.FileName);
+                        string _path = System.IO.Path.Combine(Server.MapPath("~/EventGalleryImages"), fileName);
+                        file.SaveAs(_path);
+                    }
+                    eventGalleryVM.ImageName = fileName;
+                    _eventRepo.InsertGalleryImages(eventGalleryVM);
+                }
+
+
+            }
+            _eventRepo.SaveChanges();
+
+            return Json("Success", JsonRequestBehavior.AllowGet);
+
         }
     }
 }

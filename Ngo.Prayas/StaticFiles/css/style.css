@@ -4754,6 +4754,7 @@ img{
     margin-bottom: 25px;
 }
 
+
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form input[type="password"],
@@ -4769,7 +4770,7 @@ img{
     padding: 8px 25px;
     background: none;
     color: #111111;
-    border-radius: 25px;
+    border-radius: 15px;
     transition: all 500ms ease;
     -webkit-transition: all 500ms ease;
     -ms-transition: all 500ms ease;

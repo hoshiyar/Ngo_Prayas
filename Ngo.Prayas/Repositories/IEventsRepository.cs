@@ -23,5 +23,8 @@ namespace Ngo.Prayas.Repositories
 
         void AddEventImages(Event_Gallery eventGallery);
 
+        void InsertGalleryImages(EventGalleryVM eventGallery);
+
+        int InsertEventGallery(EventGalleryVM eventGalleryVM);
     }
 }

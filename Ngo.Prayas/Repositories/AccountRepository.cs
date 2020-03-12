@@ -8,8 +8,8 @@ namespace Ngo.Prayas.Repositories
 {
     public class AccountRepository : IAccountRepository
     {
-        private Ngo_Prayas_DBEntities _dbContext;
-        public AccountRepository(Ngo_Prayas_DBEntities dbContext)
+        private Ngo_Prayas_DBEntities1 _dbContext;
+        public AccountRepository(Ngo_Prayas_DBEntities1 dbContext)
         {
             _dbContext = dbContext;
         }

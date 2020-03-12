@@ -12,9 +12,9 @@ namespace Ngo.Prayas.Repositories
 {
     public class EventRepository : IEventsRepository
     {
-        private Ngo_Prayas_DBEntities _dbContext;
+        private Ngo_Prayas_DBEntities1 _dbContext;
 
-        public EventRepository(Ngo_Prayas_DBEntities dbContext)
+        public EventRepository(Ngo_Prayas_DBEntities1 dbContext)
         {
             _dbContext = dbContext;
         }
@@ -84,9 +84,30 @@ namespace Ngo.Prayas.Repositories
             
         }
 
-        public void InsertEventGallery(EventGalleryVM eventGalleryVM)
+        public int InsertEventGallery(EventGalleryVM eventGalleryVM)
         {
-            
+            if(eventGalleryVM != null)
+            {
+                Event_GalleryDetail galleryDetail = new Event_GalleryDetail();
+                galleryDetail.EventMessage = eventGalleryVM.GalleryDescription;
+                galleryDetail.EventTitle = eventGalleryVM.GalleryName;
+                galleryDetail.GalleryName = eventGalleryVM.GalleryName;
+
+                Event_GalleryDetail addedGallery = _dbContext.Event_GalleryDetail.Add(galleryDetail);
+
+                return addedGallery.Id;
+            }
+            return 0;
+        }
+
+        public void InsertGalleryImages(EventGalleryVM eventGallery)
+        {
+            if(eventGallery != null)
+            {
+                Event_Gallery_Images event_Gallery = new Event_Gallery_Images();
+                event_Gallery.GalleryImage = event_Gallery.GalleryImage;
+                event_Gallery.DetailGalleryId = event_Gallery.DetailGalleryId;
+            }
         }
     }
 }
