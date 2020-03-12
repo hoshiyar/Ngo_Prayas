@@ -95,5 +95,27 @@ namespace Ngo.Prayas.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult SubmitGallery(EventGalleryVM eventGalleryVM)
+        {
+            if (!ModelState.IsValid)
+            {
+
+                return View("EventGalleries");
+            }
+
+            foreach (HttpPostedFileBase file in eventGalleryVM.Files)
+            {
+                string fileName = string.Empty;
+                if (file != null && file.ContentLength > 0)
+                {
+
+                    fileName = Guid.NewGuid() + "_" + System.IO.Path.GetFileName(file.FileName);
+                    string _path = System.IO.Path.Combine(Server.MapPath("~/EventGalleryImages"), fileName);
+                    file.SaveAs(_path);
+                }
+            }
+        }
     }
 }

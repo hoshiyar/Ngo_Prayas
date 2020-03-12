@@ -53,66 +53,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContactU.cs">
-      <DependentUpon>Ngo_Data_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Event.cs">
-      <DependentUpon>Ngo_Data_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EventCategory.cs">
-      <DependentUpon>Ngo_Data_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Event_Gallery.cs">
-      <DependentUpon>Ngo_Data_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Ngo_Data_Model.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Ngo_Data_Model.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Ngo_Data_Model.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Ngo_Data_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Ngo_Data_Model.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Ngo_Data_Model.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Role.cs">
-      <DependentUpon>Ngo_Data_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="User.cs">
-      <DependentUpon>Ngo_Data_Model.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="Ngo_Data_Model.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Ngo_Data_Model.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Ngo_Data_Model.edmx.diagram">
-      <DependentUpon>Ngo_Data_Model.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Ngo_Data_Model.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Ngo_Data_Model.edmx</DependentUpon>
-      <LastGenOutput>Ngo_Data_Model.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Ngo_Data_Model.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Ngo_Data_Model.edmx</DependentUpon>
-      <LastGenOutput>Ngo_Data_Model.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

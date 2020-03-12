@@ -83,5 +83,10 @@ namespace Ngo.Prayas.Repositories
             _dbContext.Event_Gallery.Add(eventGallery);
             
         }
+
+        public void InsertEventGallery(EventGalleryVM eventGalleryVM)
+        {
+            
+        }
     }
 }

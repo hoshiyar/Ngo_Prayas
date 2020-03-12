@@ -336,6 +336,7 @@
     <Compile Include="Repositories\IContactUsRepository.cs" />
     <Compile Include="Repositories\IEventsRepository.cs" />
     <Compile Include="ViewModels\ContactViewModel.cs" />
+    <Compile Include="ViewModels\EventGalleryVM.cs" />
     <Compile Include="ViewModels\EventViewModel.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
@@ -385,6 +386,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="EventGalleryImages\" />
     <Folder Include="UploadedFiles\" />
   </ItemGroup>
   <ItemGroup>
