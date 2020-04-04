@@ -1,4 +1,5 @@
-﻿using Nog.Prayas.Data;
+﻿using Ngo.Prayas.ViewModels;
+using Nog.Prayas.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +9,8 @@ namespace Ngo.Prayas.Repositories
 {
     public class AccountRepository : IAccountRepository
     {
-        private Ngo_Prayas_DBEntities1 _dbContext;
-        public AccountRepository(Ngo_Prayas_DBEntities1 dbContext)
+        private Ngo_Prayas_DBEntities _dbContext;
+        public AccountRepository(Ngo_Prayas_DBEntities dbContext)
         {
             _dbContext = dbContext;
         }
@@ -34,9 +35,9 @@ namespace Ngo.Prayas.Repositories
                 userModel.Role = role;
                 _dbContext.Users.Add(userModel);
                 _dbContext.SaveChanges();
-                return isSuccess ;
+                return isSuccess;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 isSuccess = false;
             }
@@ -53,6 +54,32 @@ namespace Ngo.Prayas.Repositories
             }
 
             return null;
+        }
+
+        public bool AddVolunteer(VolunteerApplicationVM volunteerApplication)
+        {
+            bool isSuccess = false;
+            if (volunteerApplication != null)
+            {
+                Volunteers_Application volunteers_Application = new Volunteers_Application();
+                volunteers_Application.City = volunteerApplication.City;
+                volunteers_Application.Email = volunteerApplication.Email;
+                volunteers_Application.Gender = volunteerApplication.Gender;
+                volunteers_Application.MessageDescription = volunteerApplication.MessageDescription;
+                volunteers_Application.Name = volunteerApplication.Name;
+
+                try
+                {
+                    _dbContext.Volunteers_Application.Add(volunteers_Application);
+                    _dbContext.SaveChanges();
+                    isSuccess = true;
+                }
+                catch (Exception ex)
+                {
+                    isSuccess = false;
+                }
+            }
+            return isSuccess;
         }
     }
 }

@@ -1,10 +1,9 @@
-﻿@model List<Ngo.Prayas.ViewModels.EventGalleryVM>
+﻿@model List<Ngo.Prayas.ViewModels.GalleryImageVM>
+
 @{
     ViewBag.Title = "EventGalleries";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>EventGalleries</h2>
 
 
 <!--Gallery Section-->
@@ -13,22 +12,24 @@
 
         <div class="row clearfix">
             <!--Default Portfolio Item-->
-            <div class="default-portfolio-item col-lg-8 col-md-12 col-sm-12 col-xs-12">
-                <div class="inner-box">
-                    <figure class="image-box"><img src="images/gallery/1.jpg" alt=""></figure>
-                    <!--Overlay Box-->
-                    <div class="overlay-box">
-                        <div class="overlay-inner">
-                            <div class="content">
-                                <h4><a href="event-single.html">Material Supply</a></h4>
-                                <div class="text">quis nostrud exercitation ullamco laboris</div>
-                                <a href="images/gallery/1.jpg" class="lightbox-image option-btn" title="Image Caption Here" data-fancybox-group="example-gallery"><span class="flaticon-plus-symbol"></span></a>
+            @foreach (var gallery in Model)
+            {
+                <div class="default-portfolio-item col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                    <div class="inner-box">
+                        <figure class="image-box"><img src="images/gallery/1.jpg" alt=""></figure>
+                        <!--Overlay Box-->
+                        <div class="overlay-box">
+                            <div class="overlay-inner">
+                                <div class="content">
+                                    <h4><a href="#">@gallery.Title</a></h4>
+                                    <div class="text">@gallery.Description</div>
+                                    <a href="images/gallery/1.jpg" class="lightbox-image option-btn" title="Image Caption Here" data-fancybox-group="example-gallery"><span class="flaticon-plus-symbol"></span></a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
+            }
             <!--Default Portfolio Item-->
             <div class="default-portfolio-item col-lg-4 col-md-6 col-sm-6 col-xs-12">
                 <div class="inner-box">
@@ -112,4 +113,4 @@
 
     </div>
 </section>
-<!--End Gallery Section-->
+<!--End Gallery Section

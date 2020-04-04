@@ -53,75 +53,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContactU.cs">
-      <DependentUpon>NgoPrayasDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Event.cs">
-      <DependentUpon>NgoPrayasDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EventCategory.cs">
-      <DependentUpon>NgoPrayasDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Event_Gallery.cs">
-      <DependentUpon>NgoPrayasDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Event_GalleryDetail.cs">
-      <DependentUpon>NgoPrayasDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Event_Gallery_Images.cs">
-      <DependentUpon>NgoPrayasDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="NgoPrayasDataModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NgoPrayasDataModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="NgoPrayasDataModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NgoPrayasDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="NgoPrayasDataModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NgoPrayasDataModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Role.cs">
-      <DependentUpon>NgoPrayasDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="User.cs">
-      <DependentUpon>NgoPrayasDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Volunteers_Application.cs">
-      <DependentUpon>NgoPrayasDataModel.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <EntityDeploy Include="NgoPrayasDataModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>NgoPrayasDataModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="NgoPrayasDataModel.edmx.diagram">
-      <DependentUpon>NgoPrayasDataModel.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="NgoPrayasDataModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NgoPrayasDataModel.edmx</DependentUpon>
-      <LastGenOutput>NgoPrayasDataModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="NgoPrayasDataModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NgoPrayasDataModel.edmx</DependentUpon>
-      <LastGenOutput>NgoPrayasDataModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

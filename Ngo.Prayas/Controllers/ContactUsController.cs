@@ -40,16 +40,18 @@ namespace Ngo.Prayas.Controllers
                     MobileNumber = model.MobileNumber,
                     Name = model.Name,
                     CreatedDate = DateTime.Now,
-                    IsActive = true
+                    IsActive = true,
+                    ModifiedDate = DateTime.Now
 
                 };
                 _contactRepo.Create(contact);
+                _contactRepo.SaveChanges();
             }
             catch(Exception ex)
             {
 
             }
-            return View();
+            return View("Contacts");
         }
 
 

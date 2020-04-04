@@ -1,4 +1,4 @@
-﻿
+﻿@model Ngo.Prayas.ViewModels.VolunteerApplicationVM
 @{
     ViewBag.Title = "Home";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -189,125 +189,135 @@
 </section>
 <!--End Main Slider-->
 <!--Donate Section-->
-<section class="donate-section">
+<!-- <section class="donate-section">
     <div class="auto-container">
         <div class="row clearfix">
-            <!--content column-->
-            <div class="content-column col-md-5 col-sm-12 col-xs-12">
-                <div class="inner-box">
-                    <h2>HOW <br> CAN YOU HELP?</h2>
-                    <div class="text">You can help us to donate some money which help us to provide needful things to children</div>
-                    <!--Select Amount-->
-                    <div class="select-amount">
-                        <div class="clearfix">
-                            <div class="select-box"><input type="radio" name="payment-group" id="radio-one"><label for="radio-one">&#x20b9;100</label></div>
-                            <div class="select-box"><input type="radio" name="payment-group" id="radio-two"><label for="radio-two">&#x20b9;500</label></div>
-                            <div class="select-box"><input type="radio" name="payment-group" id="radio-three" checked><label for="radio-three">&#x20b9;1000</label></div>
-                            <div class="select-box"><input type="radio" name="payment-group" id="radio-four"><label for="radio-four">&#x20b9;2000</label></div>
-                        </div>
-                    </div>
-                    <a href="donate.html" class="theme-btn btn-style-one">Donate Now</a>
 
-                </div>
-            </div>
+<div class="content-column col-md-5 col-sm-12 col-xs-12">
+    <div class="inner-box">
+        <h2>HOW <br> CAN YOU HELP?</h2>
+        <div class="text">You can help us to donate some money which help us to provide needful things to children</div>
 
-            <!--payment column-->
-            <div class="payment-column col-md-7 col-sm-12 col-xs-12">
-                <div class="inner-box">
-                    <!--price box-->
-                    <div class="price-box">
-                        <!--upper box-->
-                        <div class="content">
-                            <h3>Total Money donated</h3>
-                            <h2>112.5 billion</h2>
-                        </div>
-                        <!--lower box-->
-                        <div class="content">
-                            <h3>Donors</h3>
-                            <h2>54</h2>
-                        </div>
-                    </div>
-                    <div class="image-box">
-                        <img src="images/resource/donater-1.png" alt="" />
-                    </div>
-                </div>
+        <div class="select-amount">
+            <div class="clearfix">
+                <div class="select-box"><input type="radio" name="payment-group" id="radio-one"><label for="radio-one">&#x20b9;100</label></div>
+                <div class="select-box"><input type="radio" name="payment-group" id="radio-two"><label for="radio-two">&#x20b9;500</label></div>
+                <div class="select-box"><input type="radio" name="payment-group" id="radio-three" checked><label for="radio-three">&#x20b9;1000</label></div>
+                <div class="select-box"><input type="radio" name="payment-group" id="radio-four"><label for="radio-four">&#x20b9;2000</label></div>
             </div>
         </div>
+        <a href="donate.html" class="theme-btn btn-style-one">Donate Now</a>
+
     </div>
-</section>
+</div>
+
+
+<div class="payment-column col-md-7 col-sm-12 col-xs-12">
+    <div class="inner-box">
+
+        <div class="price-box">
+
+            <div class="content">
+                <h3>Total Money donated</h3>
+                <h2>112.5 billion</h2>
+            </div>
+
+            <div class="content">
+                <h3>Donors</h3>
+                <h2>54</h2>
+            </div>
+        </div>
+        <div class="image-box">
+            <img src="images/resource/donater-1.png" alt="" />
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+</section> -->
 <!--End Donate Section-->
 <!--Donation Section-->
-<section class="donation-section" style="background-image:url(images/background/2.jpg);">
-    <div class="auto-container">
-        <div class="row clearfix">
-            <!--Content Column-->
-            <div class="content-column col-md-6 col-sm-12 col-xs-12">
-                <div class="inner">
-                    <h2>BECOME A VOLUNTEER</h2>
-                    <div class="text">The ship set ground on the shore of this uncharted a desert isle with that this group would somehow form a family that is the wayThe ship set ground on the shore of this uncharted a desert isle with that this group.</div>
+@using (Html.BeginForm("PostVolunteerData", "Default", FormMethod.Post))
+{
+    <section class="donation-section" style="background-image:url(images/background/2.jpg);">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <!--Content Column-->
+                <div class="content-column col-md-6 col-sm-12 col-xs-12">
+                    <div class="inner">
+                        <h2>BECOME A VOLUNTEER</h2>
+                        <div class="text">The ship set ground on the shore of this uncharted a desert isle with that this group would somehow form a family that is the wayThe ship set ground on the shore of this uncharted a desert isle with that this group.</div>
+                    </div>
                 </div>
-            </div>
-            <!--Form Column-->
-            <div class="form-column col-md-6 col-sm-12 col-xs-12">
-                <div class="inner">
+                <!--Form Column-->
+                <div class="form-column col-md-6 col-sm-12 col-xs-12">
+                    <div class="inner">
 
-                    <!--Donate Form-->
-                    <div class="donate-form">
-                        <div class="form-box">
-                            <form method="post" action="donate.html">
-                                <div class="row clearfix">
-                                    <!--Form Group-->
-                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                                        <div class="field-inner">
-                                            <input id="txtName" type="text" name="field-name" value="" placeholder="Name *" required>
+                        <!--Donate Form-->
+                        <div class="donate-form">
+                            <div class="form-box">
+                                <form method="post" action="donate.html">
+                                    <div class="row clearfix">
+                                        <!--Form Group-->
+                                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                            <div class="field-inner">
+                                                @Html.TextBoxFor(m => m.Name, new { @name = "field-name", @placeholder = "Name * ", @id = "txtName" })
+                                                @*<input id="txtName" type="text" name="field-name" value="" placeholder="Name *" required>*@
+                                            </div>
                                         </div>
-                                    </div>
-                                    <!--Form Group-->
-                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                                        <div class="field-inner">
-                                            <input id="txtEmail" type="email" name="field-name" value="" placeholder="Email *" required>
+                                        <!--Form Group-->
+                                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                            <div class="field-inner">
+                                                @Html.TextBoxFor(m => m.Email, new { @name = "field-name", @placeholder = "Email * ", @id = "txtEmail" })
+                                                @*<input id="txtEmail" type="email" name="field-name" value="" placeholder="Email *" required>*@
+                                            </div>
                                         </div>
-                                    </div>
-                                    <!--Form Group-->
-                                    <div class="form-group col-md-6 col-sm-12 col-xs-12">
-                                        <div class="field-inner">
-                                            <select id="ddlGender" class="custom-select-box">
-                                                <option>Gender *</option>
-                                                <option>Male</option>
-                                                <option>Female</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                                        <!--Form Group-->
+                                        <div class="form-group col-md-6 col-sm-12 col-xs-12">
+                                            <div class="field-inner">
 
-                                    <!--Form Group-->
-                                    <div class="form-group col-md-6 col-sm-12 col-xs-12">
-                                        <div class="field-inner">
-                                            <input id="txtCity" type="text" name="field-name" value="" placeholder="City *" required>
+                                                @Html.DropDownList("Gender", new SelectList(ViewBag.GenderList))
+                                                @*<select id="ddlGender" class="custom-select-box">
+                                                        <option>Gender *</option>
+                                                        <option>Male</option>
+                                                        <option>Female</option>
+                                                    </select>*@
+                                            </div>
+                                        </div>
+
+                                        <!--Form Group-->
+                                        <div class="form-group col-md-6 col-sm-12 col-xs-12">
+                                            <div class="field-inner">
+                                                @Html.TextBoxFor(m => m.City, new { @name = "field-name", @placeholder = "City * ", @id = "City" })
+
+                                                @*<input id="City" type="text" name="field-name" value="" placeholder="City *" required>*@
+                                            </div>
+                                        </div>
+
+                                        <!--Form Group-->
+                                        <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                            <div class="field-inner">
+                                                @*<textarea placeholder="Message" id="txtMessageAppl"></textarea>*@
+                                                @Html.TextAreaFor(m => m.MessageDescription, new { @placeholder = "Message", @id = "txtMessageAppl" })
+
+                                            </div>
+                                        </div>
+                                        <!--Form Group-->
+                                        <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                            <button class="theme-btn btn-style-one" id="addVolunteer" type="submit">Apply Now</button>
                                         </div>
                                     </div>
+                                </form>
+                            </div>
+                        </div><!--End Donate Form-->
 
-                                    <!--Form Group-->
-                                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                        <div class="field-inner">
-                                            <textarea placeholder="Message" id="txtMessageAppl"></textarea>
-                                        </div>
-                                    </div>
-                                    <!--Form Group-->
-                                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                        <button class="theme-btn btn-style-one">Apply Now</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div><!--End Donate Form-->
-
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!--End Donation Section-->
-
+    </section>
+    <!--End Donation Section-->
+}
 
 
 @section Scripts {
@@ -315,36 +325,40 @@
     <script>
 
         $(document).ready(function () {
-            $(".apply").click(function () {
-
-
-
+            $("#addVolunteer").click(function () {
+                debugger;
                 var volunteerApplication = new Object();
                 volunteerApplication.Name = $('#txtName').val();
                 volunteerApplication.Gender = $('#ddlGender').val();
                 volunteerApplication.City = $('#txtCity').val();
                 volunteerApplication.MessageDescription = $("#txtMessageAppl").val();
 
-                $.ajax({
-                    type: "POST",
-                    url: "/Default/VolunteerApplication",
-                    data: JSON.stringify(employee),
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: function (response) {
-                        if (response != null) {
-                            alert("Success");
-                        } else {
-                            alert("Something went wrong");
+                try {
+                    $.ajax({
+                        type: "POST",
+                        url: "/Default/VolunteerApplication",
+                        data: JSON.stringify(employee),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (response) {
+                            if (response != null) {
+                                alert("Success");
+                            } else {
+                                alert("Something went wrong");
+                            }
+                        },
+                        failure: function (response) {
+                            alert(response.responseText);
+                        },
+                        error: function (response) {
+                            alert(response.responseText);
                         }
-                    },
-                    failure: function (response) {
-                        alert(response.responseText);
-                    },
-                    error: function (response) {
-                        alert(response.responseText);
-                    }
-                })
+                    })
+                }
+                catch
+                {
+
+                }
             })
 
         })

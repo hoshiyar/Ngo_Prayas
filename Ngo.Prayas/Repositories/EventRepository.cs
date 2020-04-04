@@ -12,9 +12,9 @@ namespace Ngo.Prayas.Repositories
 {
     public class EventRepository : IEventsRepository
     {
-        private Ngo_Prayas_DBEntities1 _dbContext;
+        private Ngo_Prayas_DBEntities _dbContext;
 
-        public EventRepository(Ngo_Prayas_DBEntities1 dbContext)
+        public EventRepository(Ngo_Prayas_DBEntities dbContext)
         {
             _dbContext = dbContext;
         }
@@ -92,9 +92,10 @@ namespace Ngo.Prayas.Repositories
                 galleryDetail.EventMessage = eventGalleryVM.GalleryDescription;
                 galleryDetail.EventTitle = eventGalleryVM.GalleryName;
                 galleryDetail.GalleryName = eventGalleryVM.GalleryName;
-
+                galleryDetail.CreatedDate = DateTime.Now;
                 Event_GalleryDetail addedGallery = _dbContext.Event_GalleryDetail.Add(galleryDetail);
 
+                _dbContext.SaveChanges();
                 return addedGallery.Id;
             }
             return 0;
@@ -105,9 +106,24 @@ namespace Ngo.Prayas.Repositories
             if(eventGallery != null)
             {
                 Event_Gallery_Images event_Gallery = new Event_Gallery_Images();
-                event_Gallery.GalleryImage = event_Gallery.GalleryImage;
-                event_Gallery.DetailGalleryId = event_Gallery.DetailGalleryId;
+                event_Gallery.GalleryImage = eventGallery.ImageName;
+                event_Gallery.DetailGalleryId = eventGallery.Id;
+                event_Gallery.CreatedDate = DateTime.Now;
+                event_Gallery.IsThumbnail = true;
+
+                _dbContext.Event_Gallery_Images.Add(event_Gallery);
             }
+        }
+
+        public IEnumerable<GalleryImageVM> GalleryList()
+        {
+            return _dbContext.Event_GalleryDetail.Select(m=> new GalleryImageVM()
+            {
+                Id = m.Id,
+                Description = m.EventMessage,
+                Title = m.EventTitle,
+                ImageName = _dbContext.Event_Gallery_Images.FirstOrDefault().GalleryImage
+            }).ToList();
         }
     }
 }

@@ -91,9 +91,12 @@ namespace Ngo.Prayas.Controllers
         }
 
         [HttpGet]
-        public ActionResult EventGalleries()
+        public ActionResult EventGalleries(string filter = null,int page = 1,int pageSize = 20)
         {
-            return View();
+
+           var galleryList = _eventRepo.GalleryList();
+
+            return View(galleryList);
         }
 
 
@@ -115,7 +118,6 @@ namespace Ngo.Prayas.Controllers
             if (eventGalleryVM.Files.Count() > 0)
             {
                 eventGalleryVM.Id = _eventRepo.InsertEventGallery(eventGalleryVM);
-                _eventRepo.SaveChanges();
 
             }
             if (eventGalleryVM.Id > 0)

@@ -26,5 +26,7 @@ namespace Ngo.Prayas.Repositories
         void InsertGalleryImages(EventGalleryVM eventGallery);
 
         int InsertEventGallery(EventGalleryVM eventGalleryVM);
+
+        IEnumerable<GalleryImageVM> GalleryList();
     }
 }

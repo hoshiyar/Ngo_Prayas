@@ -10,15 +10,16 @@ namespace Ngo.Prayas.Repositories
 {
     public class ContactUsRepository : IContactUsRepository
     {
-        private Ngo_Prayas_DBEntities1 _dBEntities;
+        private Ngo_Prayas_DBEntities _dBEntities;
 
-        public ContactUsRepository(Ngo_Prayas_DBEntities1 dBEntities)
+        public ContactUsRepository(Ngo_Prayas_DBEntities dBEntities)
         {
             _dBEntities = dBEntities;
         }
         public void Create(ContactU contactUs)
         {
             contactUs.CreatedDate = DateTime.Now;
+            contactUs.ModifiedDate = DateTime.Now;
             _dBEntities.ContactUs.Add(contactUs);
         }
 

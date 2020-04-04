@@ -1,4 +1,5 @@
-﻿using Ngo.Prayas.ViewModels;
+﻿using Ngo.Prayas.Repositories;
+using Ngo.Prayas.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,17 @@ namespace Ngo.Prayas.Controllers
 {
     public class DefaultController : Controller
     {
+        private IAccountRepository _accountRepo;
+        public DefaultController(AccountRepository accountRepo)
+        {
+            _accountRepo = accountRepo;
+        }
         // GET: Default
         public ActionResult Home()
         {
-            return View();
+            VolunteerApplicationVM volunteerApplication = new VolunteerApplicationVM();
+            ViewBag.GenderList = LoadGenderDDl();
+            return View(volunteerApplication);
         }
 
 
@@ -22,7 +30,7 @@ namespace Ngo.Prayas.Controllers
         {
             if(ModelState.IsValid)
             {
-                return Json("success", JsonRequestBehavior.AllowGet);
+                _accountRepo.AddVolunteer(volunteerApplication);
             }
             return View("Home");
         }
@@ -30,6 +38,14 @@ namespace Ngo.Prayas.Controllers
         public ActionResult AboutUs()
         {
             return View();
+        }
+
+        private List<string> LoadGenderDDl()
+        {
+            List<string> categories = new List<string>();
+            categories.Insert(0, "Male");
+            categories.Insert(1, "Female");
+            return categories;
         }
     }
 }
